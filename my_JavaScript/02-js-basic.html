@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my js</title>
+    <script src="js/functions.js"></script>
+    </head>
+<body>
+    <!-- <input type="number"> -->
+    <script>
+        /* // 数据类型
+        // number,string,boolean,undefined,null,symbol
+        // var x = 400
+        // var y = 2000
+        // console.log(x+y)
+
+        // var price = 12.5
+        // console.log(price)
+
+        // var year = 2e3
+        // console.log(year)
+
+        // var str1 = "hairong"  //单引号双引号都可以
+        // console.log(str1)
+        
+        // var isChecked = false
+        // console.log(isChecked)
+
+        // var which  //不知道未来会赋值什么：undefined，声明了但是未赋值，未来可以任意赋值
+        // console.log(which)
+        // which = 10
+        // console.log(which)
+
+        // var whichObject = null //知道未来一定会赋值对象类型：设置成null
+        // whichObject = {name:"hairong"}
+        // console.log(whichObject) */
+        /* // 类型检测 typeof
+            var a = "what's type?"
+            console.log(typeof a)  // 结果一定是字符串string类型 */
+        /* // 数据类型转换
+        //一· 转成number:
+        // 1.Number()，NaN: Not a Number, 也属于number类型
+        // 2.parseInt()
+        // 3.parseFloat()
+        // 4.除了加号以外的数学运算（+是字符拼接）,可以用-0,/1,*1
+        // var a = "100"
+        // var a = "abc"
+        // var a = true
+        // var a = undefined
+        // var a = null
+        // var a = 123.56
+        // var a = "123px"
+        // var a = "1.35rem"
+
+        // var b = Number(a)   
+        // var b = parseInt(a)   
+        // var b = parseFloat(a)   
+        // var b = a - 0
+
+        // console.log(a, b)
+        // console.log(typeof a, typeof b)
+
+        // 二·转成字符串
+        // 1.Sting()，所有类型都能转成字符串
+        // 2.toString()，null,undefined不能转
+        // 3.使用+，字符串拼接，只要+任意一边是字符串，就会进行字符串拼接；只有+两边都是数字才进行数学运算
+        // var a = 100
+        // var a = true
+        // var a = undefined
+        // var a = null
+
+        // var b = String(a)
+        // var b = toString(a) 
+        // var b = a + "1"
+        // var b = a + ""
+
+        // console.log(a, b)
+
+        // 三·转成布尔值
+        // Boolean()：'',0,null,undefined,NaN是false，其余都是true
+        // var a = 100
+        // var a = ''
+        // var a = 0
+
+        // var b = Boolean(a)
+
+        // console.log(a, b) */
+
+        /* 函数：关键字function，函数是一个复杂数据类型 */        
+        /*  // 1.定义函数
+        // （1）声明式：先调用再定义；函数名定义好了;
+            function test1(){
+                var test1_a = "cola"
+                console.log("我是test1套餐",test1_a)
+            }
+            function test2(){
+                console.log("我是test2套餐")
+            }
+
+        // （2）赋值式：先定义再调用；没想好函数名，先赋值给一个变量，这个变量代表了函数
+            var test3 = function(){
+                console.log("我是test3套餐")
+            }
+            */ 
+        /*  // 2.调用函数
+            test1()
+            test2()
+            test3() */
+        /* // 函数实现九九乘法表
+        function multiplication_table(){
+            for (var m = 1; m <= 9; m++){
+                for (var n = 1; n <= m; n++){
+                    document.write("<span>" + m + "*" + n + "=" + m * n + "<span>")
+                }
+                document.write("<br>")
+            }
+        }
+        multiplication_table() */
+        /* // 函数参数
+        // 1.实参 VS 形参
+        // 2.可以传参，可以不传参
+        // 3.形参只能在函数内部去使用 
+        // 定义了两个形参
+        // function test(a,b){
+        //     var yinliao = a===1?'可乐':'雪碧'
+        //     var xiaoshi = b===1?'薯条':'鸡米花'
+        //     var zhushi ='鸡腿堡'
+        //     console.log("我是套餐A",yinliao,xiaoshi,zhushi)
+        // }
+        // // 实参：函数调用的时候给形参赋值的
+        // test(1,2)
+        // test(2,1)
+
+        // test()
+        // 函数参数实例
+        // 1.九九乘法表
+        // function test(target){
+        //     // 给一个默认值
+        //     // 给提示警告
+        //     if (target===undefined){
+        //         alert(
+        //             "请传入参数"
+        //         )
+        //     }
+        //     for(var m = 1; m <= target; m++){
+        //         for (var n = 1; n <=m; n++){
+        //             document.write("<span>" + m + "*" + n + "=" + m * n + "</span>")
+        //             document.write(" ")
+        //         }
+        //         document.write("<br>")
+        //     }
+        // }
+
+        // test(9)
+        // test(6)
+        // // test()
+        */
+        /* // 函数的返回值 return
+        // 1.return可以不写，看需求加
+        // 2.return后面无法执行了，函数结束了，打断函数执行
+        // function add3(x,y,z){
+        //     var result = x+y+z
+        //     // console.log(result)
+        //     // document.write(result)
+
+        //     return result
+
+        //     console.log("2222222222")
+        // }
+
+        // // add3(1,2,3)
+        // var res = add3(1,2,3)
+        // console.log(res)
+
+        // function test(a){
+        //     console.log("传给后端用",a)
+        // }
+
+        // test(res)
+        
+        // return案例
+        // function isPrime(n){
+        //     // var n = 111
+        //     for (var i = 2; i <= n / 2; i++){
+        //         if (n % i === 0){
+        //             // break
+        //             return false
+        //         }
+        //         // console.log(i)
+        //     }
+
+        //     // if(i <= n / 2){
+        //     //     // console.log("不是")
+        //     //     return false
+        //     // }else{
+        //     //     // console.log("是")
+        //     //     return true
+        //     // }
+        //         // return i>n/2
+        //         return true
+            
+        // }
+        
+         // head里引入外部js文件里的函数，保证最先加载，<script src="js/functions.js">
+        var res = isPrime(101)
+        console.log(res)
+
+        for (var i=300;i<500;i++){
+            if(isPrime(i)){
+                console.log(i)
+            }
+        } */
+           
+    </script>
+</body>
+
+</html>

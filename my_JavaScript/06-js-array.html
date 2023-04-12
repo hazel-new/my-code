@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+
+<body>
+    <script>
+        /* //创建数组
+         // 字面量
+        var ageArr = [12,14,15,16]
+        var nameArr = ['kerwin','xiaoming','tiechui']
+
+        var obj1 = {
+            name:'kerwin',
+            age:100
+        }
+        var obj2 = {
+            name:'xiaoming',
+            age:18
+        }
+        var studentArr = [obj1,obj2]
+
+        var studentArr2 = [{
+            name:'kerwin',
+            age:100
+        },{
+            name:'xiaoming',
+            age:18
+        }]
+
+        console.log(ageArr)
+        // Array内置构造函数
+
+        var arr1 = new Array(12,14,15,16)
+
+        var arr2 = new Array(10)
+        console.log(arr1)
+        console.log(arr2) */
+
+        /* // 数组的length，可读可写
+        var arr1 = [1,2,3,4]
+        console.log(arr1.length)
+
+        // length在可写方面用得不多，用得最多是清空数组
+        arr1.length = 3
+        console.log(arr1)
+        
+        // 清空数组
+        arr1.length = 0
+        console.log(arr1) */
+
+        /* // 索引,从0开始, 读取，修改，增加
+        var arr2 = ['kerwin','xiaoming','tece']
+        console.log(arr2[0],arr2[2],arr2[3])
+        
+        arr2[0] = 'kavin'
+        console.log(arr2)
+
+        arr2[3] = 'gander'
+        console.log(arr2)
+
+        // 一般不这么用
+        arr2[5] = 'aaa'
+        console.log(arr2) */
+
+        /* // 遍历
+        var arr3 = [3,4,5,6,7,8]
+        for(var i=0; i<arr3.length; i++){
+            console.log(arr3[i])
+        } */
+
+        /* // 数组的复制
+        var arr4 = []
+        for(var i=0; i<arr3.length; i++){
+            arr4[i] = arr3[i]
+        }
+        console.log(arr4)
+
+        arr4[0] = 'aaaa'
+        console.log(arr3,arr4) */
+
+        /* // sort 排序,冒泡排序法，选择排序法
+        // var arr = [100,4, 3, 2, 1,8,7,66,33]
+        // var temp = arr[0]
+        // arr[0] = arr[1]
+        // arr[1] = temp
+        // console.log(arr)
+
+        // 冒泡过程
+        // for (var i = 0; i < arr.length - 1; i++) {
+        //     if (arr[i] > arr[i + 1]) {
+        //         var temp = arr[i]
+        //         arr[i] = arr[i + 1]
+        //         arr[i + 1] = temp
+        //     }
+        // }
+
+        // for (var i = 0; i < arr.length - 1 - 1; i++) {
+        //     if (arr[i] > arr[i + 1]) {
+        //         var temp = arr[i]
+        //         arr[i] = arr[i + 1]
+        //         arr[i + 1] = temp
+        //     }
+        // }
+
+        // for (var i = 0; i < arr.length - 1 - 1 - 1; i++) {
+        //     if (arr[i] > arr[i + 1]) {
+        //         var temp = arr[i]
+        //         arr[i] = arr[i + 1]
+        //         arr[i + 1] = temp
+        //     }
+        // }
+        // console.log(arr)
+
+        // // 冒泡排序法
+        // for (var m = 0; m < arr.length - 1; m++) {
+        //     for (var i = 0; i < arr.length - 1 - m; i++) {
+        //         if (arr[i] > arr[i + 1]) {
+        //             var temp = arr[i]
+        //             arr[i] = arr[i + 1]
+        //             arr[i + 1] = temp
+        //         }
+        //     }
+        // }
+        // console.log(arr)
+
+        // 选择排序法
+        // 选择排序过程
+        var arr = [4, 3, 2, 1]
+
+        // var minIndex = 0
+
+        // for(var i=1;i<arr.length;i++){
+        //     if(arr[i]<arr[minIndex]){
+        //         minIndex = i
+        //     }
+        // }
+        // console.log(minIndex)
+
+        // var temp = arr[0]
+        // arr[0] = arr[minIndex]
+        // arr[minIndex] = temp
+
+        // console.log(arr)
+
+        // var minIndex = 1
+
+        // for(var i=2;i<arr.length;i++){
+        //     if(arr[i]<arr[minIndex]){
+        //         minIndex = i
+        //     }
+        // }
+        // console.log(minIndex)
+
+        // var temp = arr[1]
+        // arr[1] = arr[minIndex]
+        // arr[minIndex] = temp
+
+        // console.log(arr)
+
+        for (var m = 0; m < arr.length - 1; m++) {
+            var minIndex = m
+            for (var i = m + 1; i < arr.length; i++) {
+                if (arr[i] < arr[minIndex]) {
+                    minIndex = i
+                }
+            }
+            // console.log(minIndex)
+            if(minIndex !== m){
+                var temp = arr[m]
+                arr[m] = arr[minIndex]
+                arr[minIndex] = temp
+            }            
+        }
+        console.log(arr) */
+
+        /*  // 数组常用方法-1:影响原数组的方法，push,pop,unshift,shift,splice,reverse,sort
+         var arr = [1,2,3,"kr","xm"]
+ 
+         // push：后面追加元素；返回值:数组的长度   
+         var res = arr.push(88)
+         console.log(arr)
+         console.log('返回值:',res)
+ 
+         // pop：后面删除元素；返回值：删除的元素
+         var respop = arr.pop()
+         console.log(arr)
+         console.log('返回值：',respop)
+ 
+         // unshift：前面追加元素；返回值：长度
+         var resunshift = arr.unshift(99)
+         console.log(arr)
+         console.log("返回值：",resunshift)
+ 
+         // shift：前面删除元素；返回值：删除的元素
+         var resshift = arr.shift()
+         console.log(arr)
+         console.log("返回值：",resshift)
+ 
+         // splice:任意位置删除/增加元素；返回值：删除元素组成的数组
+         // var ressplice = arr.splice(1,2,'gd','zg',66)  //从index为1开始，删除2个元素,并从index为1开始处增加gd,zg,66
+         // console.log(arr)
+         // console.log("返回值：",ressplice)
+ 
+         var ressplice2 = arr.splice(1,0,'gd','zg') ////从index为1开始，删除0个元素,并从index为1开始处增加gd,zg
+         console.log(arr)
+         console.log('返回值：',ressplice2)
+ 
+         var arr2 = [222,333,444]
+         arr2.splice(0,0,'aaaa')
+         console.log(arr2)
+ 
+         arr2.splice(6,0,'bbbb')
+         console.log(arr2)
+ 
+         // reverse:倒序
+         var arr3= [4,7,3,1]
+         arr3.reverse()
+         console.log(arr3)
+ 
+         // sort:排序,接受一个回调函数的用法
+         var arr4 = [11,21,7,56,3]
+         // console.log(arr4)
+         // arr4.sort()
+         // console.log(arr4)
+         arr4.sort(function(a,b){
+             // return b-a // b-a是倒序
+             return a-b // a-b是正序
+         })
+         console.log(arr4) */
+
+        /*  // 数组常用方法-2：不影响原数组的方法，concat,join,slice,indexOf,lastIndexOf
+             // // concat：拼接
+             // var arr1 = [1,2,3]
+             // var arr2 = [4,5,6]
+ 
+             // var arr3 = arr1.concat(arr2,'xm',[8,9])
+             // console.log(arr1,arr2,arr3)
+ 
+             // // concat使用：另一种复制方式
+             // var arr4 = arr1.concat()
+             // arr4.pop()
+             // console.log(arr1,arr4)
+ 
+             // join：数组转换成字符串
+             // var arr = [1,2,3,4,5]
+             // document.write(arr)
+             // document.write('<br>')
+             // document.write(arr.join("-"))
+ 
+             // join使用场景
+             // var arr = []
+             // for(var i=0;i<5;i++){
+             //     // arr.push(i)
+             //     arr.push("<li>"+i+"</li>")
+             // }
+ 
+             // console.log(arr)
+             // document.write(arr.join(""))
+ 
+             // slice:截取,(开始索引，结束索引（不包括）)
+             // 跟splice区别就是不影响原数组
+             // var arr = ['aaa','bbb','ccc','ddd','eee']
+ 
+             // // var arr2 = arr.slice(0,2)
+             // // var arr2 = arr.slice(2) //从index2开始到最后
+             // // var arr2 = arr.slice() //从开始到最后，相当于复制了一个全新数组
+             // // arr2.pop()
+             // var arr2 = arr.slice(2,-1) //长度+（-1），从后往前第一位
+             // console.log(arr,arr2)
+ 
+             // indexOf:返回要查找内容的索引值，-1表示找不到
+             // var arr = ['aaa','bbb','ccc','ddd','eee']
+ 
+             // // var res = arr.indexOf("ccc")
+             // // var res = arr.indexOf("xm")
+             // var res = arr.indexOf("aaa",2) //从index2开始查
+             // console.log(res)
+ 
+             // lastIndexOf：从后面开始查找，-1表示找不到
+             // var arr = ['aaa','bbb','ccc','ddd','eee']
+             // var res = arr.lastIndexOf("ccc",1)
+             // console.log(res) */
+
+       /*  //数组去重
+        var arr = [1, 2, 3, 4, 3, 5, 6, 2, 1]
+        // 1-方法：基础方法，for循环利用indexOf
+        // var arr2 = []
+        // for (var i=0;i<arr.length;i++){
+        //     if(arr2.indexOf(arr[i]) === -1){
+        //         arr2.push(arr[i])
+        //     }            
+        // } 
+        // console.log(arr,arr2)
+
+        // 2-方法：利用对象
+        // var obj = {}
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     obj[arr[i]] = "随便"
+        // }
+        // console.log(obj)
+        // var arr2 = []
+        // for(var i in obj){
+        //     arr2.push(Number(i))
+        // }
+        // console.log(arr2)
+
+        // 3-方法：new Set(ES6)，推荐这个方法
+            // var set1 = new Set(arr)
+            // console.log(set1)
+
+            // var arr1 = Array.from(set1) // 把set结构转换成array结构
+            // console.log(arr1) */
+
+          /*  // 数组常用方法-3：回调函数实现，forEach,map,filter,every,some,find,reduce
+        //    forEach：遍历
+        // var arr = ['aaa','bbb','ccc','ddd']
+        // // 回调函数
+        // arr.forEach(function(item,index){
+        //     console.log(item,index)
+        //     }
+        // )
+
+        // map:映射
+        // var arr = [1,2,3,4,5]
+        // var arr2 = arr.map(function(item){
+        //     return item*item*item
+        // })
+        // console.log(arr2)
+        
+        // var arr = ['xi','tc','kw']
+        // var arr2 = arr.map(function(item){
+        //     return "<li>"+item+"</li>"
+        // })
+        // console.log(arr,arr2)
+        // document.write(arr2.join(""))
+
+        // filter:过滤
+        // var arr = [
+        //     {
+        //         name:'aaa',
+        //         price:100
+        //     },
+        //     {
+        //         name:'bbb',
+        //         price:200
+        //     },
+        //     {
+        //         name:'ccc',
+        //         price:300
+        //     }
+        // ]
+        // var arr2 = arr.filter(function(item){
+        //     // console.log(item)
+        //     return item.price>200
+        // })
+        // console.log(arr2)
+
+        // every：每一个都满足才是true
+        // var arr = [80,90,88,94]
+        // var arr = [90,90,98,94]
+        // var arr2 = arr.every(function(item){
+        //     return item>=90
+        // })
+        // console.log(arr2)
+
+        // some：只要一个满足条件，就是true
+        // var arr = [80,90,88,94]
+        // var arr = [8,9,8,4]
+        // var arr2 = arr.some(function(item){
+        //     return item>=90
+        // })
+        // console.log(arr2)
+
+        // find:跟filter的区别，只能找到符合条件的一项，filter都找到并返回数组
+        // var arr = [
+        //     {
+        //         name:'语文',
+        //         grade:90
+        //     },
+        //     {
+        //         name:'数学',
+        //         grade:95
+        //     },
+        //     {
+        //         name:'体育',
+        //         grade:100
+        //     }
+        // ]
+        // // var arr2 = arr.filter(function(item){
+        // //     return item.grade === 100
+        // // })
+        // var arr2 = arr.find(function(item){
+        //     return item.grade === 100
+        // })
+        // console.log(arr2)
+
+        // reduce：叠加
+    //     var arr = [1,2,3,4,5]
+    //    var arr2 = arr.reduce(function(prev,item){
+    //         return prev+item
+    //     },0)
+    //     console.log(arr2) */
+
+    </script>
+</body>
+
+</html>

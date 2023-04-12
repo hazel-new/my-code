@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+</head>
+<body>
+    <script>
+        /* var str = 'hello'
+        console.log(str+" world")
+
+        var str2 = new String('hello')
+        console.log(str2 + " world")
+
+        console.log(str.length)
+
+        // length：只读，不改变原字符串
+        str.length = 0
+        console.log(str)
+
+        // 索引/下标:只读
+        console.log(str[1])
+        
+        str[1] = 'a'
+        console.log(str)
+
+        // 遍历
+        for(var i=0;i<str.length;i++){
+            console.log(i,str[i])
+        }
+
+        var str3 = str
+        str = 'aaa'
+        console.log(str,str3) */
+
+
+       /*  // 案例：统计每个字母出现几次，{a:3,b:3,c:2}
+        var str = 'abcabcab'
+        // 目标：统计每个字母出现几次，{a:3,b:3,c:2} */
+
+       /*  // 字符串的常用方法:charAt,charCodeAt,toUpperCase,toLowerCase,substr, substring,slice,replace,split,indexOf,lastIndexOf,concat,trim, trimStart,trimLeft,trimEnd,trimRight
+        // chartAt(索引)：返回索引对应的字符
+        // var str = 'kerwin'
+        // var str1 = str.charAt(1)
+        // console.log(str,str1)
+
+        // charCodeAt(索引)：返回索引对应的字符编码
+        // var str1 = str.charCodeAt(0)
+        // console.log(str1)
+
+        // var arr = []
+        // for(var i=65;i<91;i++){
+        //     arr.push(String.fromCharCode(i))
+        // }
+        // console.log(arr)
+
+        // toUpperCase(),toLowerCase()
+        // var str = 'HeLLo我'
+        // console.log(str.toUpperCase())
+        // console.log(str.toLowerCase())
+
+        // 截取：substr(开始索引，长度), substring(开始索引，结束索引) 【包前不包后】,slice(开始索引，结束索引)【有负数】
+        // var str = 'kerwin'
+        // var str1 = str.substr(1,2)
+        // var str2 = str.substring(1,2)
+        // var str3 = str.substring(1)
+        // var str4 = str.slice(1,2)
+        // var str5 = str.slice(1,-1)
+        // console.log(str1)
+        // console.log(str2)
+        // console.log(str3)
+        // console.log(str4)
+        // console.log(str5)
+
+        // console.log(str.substring(0,1).toUpperCase()+str.substring(1))
+
+        // replace:替换,只能替换第一个，后面用正则表达式实现全部替换
+        // var str = 'adefegdgeaa'
+        // var str1 = str.replace('a','*')
+        // console.log(str1)
+
+        // split：分割，对比join,生成数组
+        // var str = 'a,b,c,d'
+        // console.log(str.split(','))
+
+        // indexOf,lastIndexOf:查询字符是否在，返回位置
+        // var str = 'abcda'
+        // console.log(str.indexOf('a',1))
+        // console.log(str.lastIndexOf('a',3))
+
+        // concat:连接字符串,跟 + 一样
+        // var str = 'abd'
+        // var str1 = str.concat('ef')
+        // console.log(str1)
+
+        // trim：去掉首尾空格
+        // trimStart(),trimLeft():去掉首空格
+        // trimEnd(),trimRight()：去掉尾空格
+        // var str = ' hello world '
+        // console.log('|'+str+'|')
+        // console.log('|'+str.trimRight()+'|') */
+        
+        /* // 案例：模糊查询
+        var arr = ['aaa','abc','bcc','bcd','ddd','ccd']
+
+        // 数组的filter，字符串的indexOf
+        var input = prompt("请输入查询的内容")
+        var res = arr.filter(function(item){
+            // return item === 'abc'
+            // return item === 'b'
+            // return item.indexOf('b')>-1
+            // return item.indexOf('b')!=-1
+            return item.indexOf(input)>-1
+        })
+
+        console.log(res) */
+
+        // JSON字符串 ==》对象
+        // JSON格式：{"key":value,"key":value}
+        // 后端给前端发数据
+        var str = '{"name":"kerwin","age":100}'
+        // console.log(typeof(str))
+        // console.log(str)
+        var obj = JSON.parse(str)
+        console.log(obj)
+
+        // 前端给后端发数据
+        var obj1 = {name:"tiechui"}
+        var str1 = JSON.stringify(obj1)
+        console.log(obj1,str1)
+
+    </script>
+</body>
+</html>

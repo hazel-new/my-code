@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制语句Demo</title>
+</head>
+<body>
+<!--if要有个endif匹配,for也一样endfor-->
+{% if age>18 %}
+    <div>您已经满18岁,可以进入网吧!</div>
+{% elif age==18 %}
+    <div>您刚满18岁,需要父母陪同才能进入!</div>
+{% else %}
+    <div>您未满18岁,不能进入网吧! </div>
+{% endif %}
+
+
+<!--没有break语句，只能全部循环出来-->
+{% for book in books %}
+    <div>图书名称：{{ book.name }}, 图书作者：{{ book.author }}</div>
+{% endfor %}
+</body>
+</html>

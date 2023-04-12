@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script src="js/functions.js"></script>
+</head>
+<body>
+    <script>
+        /* 函数：关键字function，函数是一个复杂数据类型 */        
+        /*  // 1.定义函数
+        // （1）声明式：先调用再定义；函数名定义好了;
+            function test1(){
+                var test1_a = "cola"
+                console.log("我是test1套餐",test1_a)
+            }
+            function test2(){
+                console.log("我是test2套餐")
+            }
+
+        // （2）赋值式：先定义再调用；没想好函数名，先赋值给一个变量，这个变量代表了函数
+            var test3 = function(){
+                console.log("我是test3套餐")
+            }
+            */ 
+        /*  // 2.调用函数
+            test1()
+            test2()
+            test3() */
+        /* // 函数实现九九乘法表
+        function multiplication_table(){
+            for (var m = 1; m <= 9; m++){
+                for (var n = 1; n <= m; n++){
+                    document.write("<span>" + m + "*" + n + "=" + m * n + "<span>")
+                }
+                document.write("<br>")
+            }
+        }
+        multiplication_table() */
+        /* // 函数参数
+        // 1.实参 VS 形参
+        // 2.可以传参，可以不传参
+        // 3.形参只能在函数内部去使用 
+        // 定义了两个形参
+        // function test(a,b){
+        //     var yinliao = a===1?'可乐':'雪碧'
+        //     var xiaoshi = b===1?'薯条':'鸡米花'
+        //     var zhushi ='鸡腿堡'
+        //     console.log("我是套餐A",yinliao,xiaoshi,zhushi)
+        // }
+        // // 实参：函数调用的时候给形参赋值的
+        // test(1,2)
+        // test(2,1)
+
+        // test()
+        // 函数参数实例
+        // 1.九九乘法表
+        // function test(target){
+        //     // 给一个默认值
+        //     // 给提示警告
+        //     if (target===undefined){
+        //         alert(
+        //             "请传入参数"
+        //         )
+        //     }
+        //     for(var m = 1; m <= target; m++){
+        //         for (var n = 1; n <=m; n++){
+        //             document.write("<span>" + m + "*" + n + "=" + m * n + "</span>")
+        //             document.write(" ")
+        //         }
+        //         document.write("<br>")
+        //     }
+        // }
+
+        // test(9)
+        // test(6)
+        // // test()
+        */
+        /* // 函数的返回值 return
+        // 1.return可以不写，看需求加
+        // 2.return后面无法执行了，函数结束了，打断函数执行
+        // function add3(x,y,z){
+        //     var result = x+y+z
+        //     // console.log(result)
+        //     // document.write(result)
+
+        //     return result
+
+        //     console.log("2222222222")
+        // }
+
+        // // add3(1,2,3)
+        // var res = add3(1,2,3)
+        // console.log(res)
+
+        // function test(a){
+        //     console.log("传给后端用",a)
+        // }
+
+        // test(res)
+        
+        // return案例
+        // function isPrime(n){
+        //     // var n = 111
+        //     for (var i = 2; i <= n / 2; i++){
+        //         if (n % i === 0){
+        //             // break
+        //             return false
+        //         }
+        //         // console.log(i)
+        //     }
+
+        //     // if(i <= n / 2){
+        //     //     // console.log("不是")
+        //     //     return false
+        //     // }else{
+        //     //     // console.log("是")
+        //     //     return true
+        //     // }
+        //         // return i>n/2
+        //         return true
+            
+        // }
+        
+         // head里引入外部js文件里的函数，保证最先加载，<script src="js/functions.js">
+        var res = isPrime(101)
+        console.log(res)
+
+        for (var i=300;i<500;i++){
+            if(isPrime(i)){
+                console.log(i)
+            }
+        } */
+        /* // 预解析：js是解释型代码，预解析就是在所有代码执行之前先进行解释
+        // var定义的变量和声明式函数会预解析，放到script最前面，访问的时候不会报错，只是提示undefined
+        console.log(myname)
+
+        var myname = "hairong"
+        console.log(myname)
+
+        // 赋值函数
+        // myFunc() //预解析的时候会把var类型放到前面去，但是只是myFunc本身，不可以小括号执行
+
+        var myFunc = function(){
+            console.log("myfunc")
+        }
+
+        myFunc()
+
+        // 声明式 function（）
+        test()  //预解析的时候会把声明式函数放到script的最前面来，所以调用的时候能够（）执行
+
+        function test(){
+            console.log("test")
+        }
+
+        test() */
+        /* // 重名
+        // var myname ='ffff'
+        // var myname = 'dddd'
+
+        // console.log(myname)
+
+        // function test(){
+        //     console.log("test1")
+        // }
+
+        // function test(){
+        //     console.log("test2")
+        // }
+
+        // test()
+
+        // 1.预解析时var变量和函数都提到前面，但是var已经赋值了，而函数还没执行
+        // 2.预解析只在当前的script标签里提升
+        // 3.提升不能跨标签和跨函数
+        // age()
+        // var age = 100
+        
+        // function age(){
+        //     console.log("age is 100")
+        // }
+
+        // console.log(age)
+        // age() // 变量名和函数名冲突了，报错 */
+        /* // 作用域：一个变量可以生效的范围
+        // 全局作用域：任何地方地方都能使用，直到页面关闭
+        // 局部作用域：js中只有函数能生成一个局部作用域
+        // 访问：获取一个变量的值，就近原则，全局都没有就报错
+        // 赋值：改变变量的值，就近原则，全局没有就把这个变量定义为全局变量，再赋值
+        // var myname = 'hairong'
+
+        // function test(){
+        //     console.log(nickname,myname)
+        //     var nickname = "hr"
+        //     console.log('test',nickname)
+        // }
+        // console.log(nickname)
+
+        // var num = 100
+
+        function test1(){
+            // var num = 200
+
+            function child1(){
+                // var num = 300
+
+                num = 400
+                console.log(num)
+            }
+            // console.log("修改前，", num)
+            child1()
+            // console.log("修改后，", num)
+        }
+        // console.log("修改前，", num)
+        test1()
+        console.log("修改后，", num) */
+    </script>
+    <script>
+        // 作用域
+        // console.log(myname)
+        // console.log(test)
+        // test()
+    </script>
+</body>
+</html>
