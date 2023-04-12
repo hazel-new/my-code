@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hairong's Demo</title>
+    <style>
+        .todo{
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+    <script>
+        function update_priority()
+        {
+            pass
+        }
+    </script>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <hr>
+    <div class="class_todos">
+        <form method="post">
+            <p>
+                <b><label for="input_Todo">Todo</label></b>
+            </p>
+            <p>
+                <input type="text" name="input_Todo"
+                    placeholder="Input Todo">
+            </p>
+
+            <p>
+                <b><label for="input_Priority">Priority</label></b>
+            </p>
+            <p>
+                <input id="input_Priority-0" name="input_Priority" required type="radio" value="High">
+                <label for="input_Priority-0">High</label>
+            </p>
+            <p>
+                <input id="input_Priority-1" name="input_Priority" required type="radio" value="Middle">
+                <label for="input_Priority-1">Middle</label>
+            </p>
+            <p>
+                <input id="input_Priority-2" name="input_Priority" required type="radio" value="Low">
+                <label for="input_Priority-2">Low</label>
+            </p>
+            <button type="submit">Add</button>
+        </form>
+        <hr>
+        {% for todo in todos %}
+            <div class="todo">
+                <p>{{ todo['todo_name'] }} <i>({{ todo['todo_priority']}})</i></p>
+                <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this todo?')">
+                </form>
+                <form method="POST" action="{{ url_for('update_priority', id=todo['_id']) }}">
+                    <input type="submit" value="Update" onclick="return confirm('Are you sure you want to change this todo priority?')">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {"//": "books"},
+  {"type": "文学", "name": "我这一辈子", "author": "老舍"},
+  {"type": "文学", "name": "四世同堂", "author": "老舍"},
+  {"type": "文学", "name": "骆驼祥子", "author": "老舍"},
+  {"type": "文学", "name": "茶馆", "author": "老舍"},
+  {"type": "文学", "name": "平凡的世界", "author": "茅盾"},
+  {"type": "文学", "name": "子夜", "author": "茅盾"},
+  {"type": "心理学", "name": "自控力", "author": "凯利·麦格尼格尔"},
+  {"type": "IT", "name": "mongoDB in action", "author": "kyle banker"},
+  {"type": "IT", "name": "Redis in action", "author": "约西卡"},
+  {"type": "文学", "name": "红楼梦", "author": "曹雪芹"},
+  {"type": "文学", "name": "呐喊", "author": "鲁迅"},
+  {"type": "文学", "name": "朝花夕拾", "author": "鲁迅"},
+  {"type": "文学", "name": "狂人日记", "author": "鲁迅"},
+  {"type": "文学", "name": "彷徨", "author": "鲁迅"},
+  {"type": "文学", "name": "阿Q正传", "author": "鲁迅"},
+  {"type": "IT", "name": "计算机组成原理", "author": "唐溯飞"},
+  {"type": "IT", "name": "数据结构与算法分析", "author": "马克"},
+  {"type": "IT", "name": "操作系统概论", "author": "亚伯拉罕"},
+
+  {"//": "age"},
+  {"name": "马云","age": 54},
+  {"name": "马化腾","age": 46},
+  {"name": "张朝阳","age": 53},
+  {"name": "李嘉诚","age": 90},
+  {"name": "李彦宏","age": 49},
+  {"name": "雷军","age": 48},
+  {"name": "周鸿伟","age": 47}
+
+  ]
+

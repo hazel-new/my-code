@@ -1,0 +1,52 @@
+/* h3{
+    color:green;
+} */
+
+/* 元素选择器 */
+/* div{
+    background-color: orange;
+    color:red;
+}
+
+h1{
+    color:blue;
+} */
+
+/* class类选择器 */
+/* 就近原则，看执行顺序，选最后执行的background */
+/* .mytype{
+    background-color: green;
+}
+
+.mytype2{
+    color:yellow;
+    background-color: red;
+} */
+
+
+/* id选择器 */
+/* 唯一性，id=""里只能写一个id，跟class不一样 */
+/* #box1{
+    background-color: yellow;
+}
+
+#box2{
+    background-color: red;
+}
+
+#box3{
+    background-color: blue;
+} */
+
+
+/* 文本属性 */
+.p1{
+    font-size: 13px;
+}
+
+.p2{
+    font-family: 楷体;
+    /* color:green; */
+    /* color:rgb(0,255,0); */
+    color:#00ff00;
+}

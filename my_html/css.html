@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css优先级：外部样式<内部样式<内联样式，优先级最低的写在最上面 -->
+    <!-- css 外部样式表 写法1 -->
+    <!-- 写法1和2的区别：看笔记，目前看起来link更好 -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- css 外部样式表 写法2 -->
+    <!-- <style>
+        @import url(css/index.css);
+    </style> -->
+    <!-- css 内部样式表,默认放在head中 -->
+   <!-- <style> 
+    h2{
+        color:red;
+    }
+    </style> -->
+</head>
+<body>
+    <!-- <h1>css层叠样式表</h1> -->
+    <!-- <h2>css内部样式</h2> -->
+    <!-- <h3>css外部样式</h3> -->
+    <!-- <h4 style="color:yellow">css内联样式</h4> -->
+
+    <!-- 元素选择器 -->
+    <!-- <div>11111</div>
+    <div>22222</div>
+    <h1>33333</h1>
+    <p>444444</p> -->
+
+    <!-- class类选择器  -->
+    <!-- /* 就近原则，看执行顺序，选最后执行的background */ -->
+    <!-- <div>hr-1111</div>
+    <div class="mytype mytype2">hr-2222</div>
+    <div class="mytype">hr-3333</div>
+    <div class="mytype">hr-4444</div>
+    <div>hr-5555</div> -->
+
+    <!-- id选择器 -->
+    <!-- /* 唯一性，id=""里只能写一个id，跟class不一样 */ -->
+    <!-- <div id="box1">11111</div>
+    <div id="box2">11111</div>
+    <div id="box3">11111</div> -->
+
+    <!-- 文本属性 -->
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam eum ipsa cum temporibus sint ab error? Expedita libero quibusdam cum fugit fugiat doloribus, saepe ipsa facere, aperiam eum quaerat?</p>
+
+   <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio corporis quo ducimus, tempore autem asperiores adipisci vero mollitia accusantium veniam nam beatae cupiditate. Maiores eius sit ea, provident laudantium accusamus?</p>
+
+   <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio corporis quo ducimus, tempore autem asperiores adipisci vero mollitia accusantium veniam nam beatae cupiditate. Maiores eius sit ea, provident laudantium accusamus?</p>
+
+   <p class="p2">静夜思</p>
+</body>
+</html>

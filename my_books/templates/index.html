@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hairong's Demo</title>
+    <style>
+        .todo{
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+    <script>
+        function update_type()
+        {
+            pass
+        }
+    </script>
+</head>
+<body>
+    <h1>BOOKS</h1>
+    <hr>
+    <div class="class_books">
+        <form method="post">
+            <p>
+                <b><label for="input_BookName">Book Name</label></b>
+            </p>
+            <p>
+                <input type="text" name="input_BookName"
+                    placeholder="Input Book Name">
+            </p>
+
+            <p>
+                <b><label for="input_BookType">Book Type</label></b>
+            </p>
+            <p>
+                <input id="input_BookType-0" name="input_BookType" required type="radio" value="IT">
+                <label for="input_BookType-0">IT</label>
+            </p>
+            <p>
+                <input id="input_BookType-1" name="input_BookType" required type="radio" value="文学">
+                <label for="input_BookType-1">文学</label>
+            </p>
+            <p>
+                <input id="input_BookType-2" name="input_BookType" required type="radio" value="社科">
+                <label for="input_BookType-2">社科</label>
+            </p>
+            <button type="submit">Add</button>
+        </form>
+        <hr>
+        {% for book in books %}
+            <div class="book">
+                <p>{{ book['book_name'] }} <i>({{ book['book_type']}})</i></p>
+                <form method="POST" action="{{ url_for('delete', id=book['_id']) }}">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this book?')">
+                </form>
+                <form method="POST" action="{{ url_for('update_type', id=book['_id']) }}">
+                    <input type="submit" value="Update" onclick="return confirm('Are you sure you want to change this book's type?')">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
