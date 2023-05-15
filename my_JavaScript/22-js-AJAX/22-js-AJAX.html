@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <!-- 基本前后端交互：每次提交会刷新，用户体验不好 -->
+    <!-- <form action="http://www.baidu.com">
+        <input type="text" name="" id="">
+        <input type="submit" value="登陆">
+    </form> -->
+   
+   <!-- ajax使用 -->
+   <script>
+        /* // ajax === async javascript and xml(闭合标签),是前后台交互的能力，也是我们客户端给服务端发送消息的工具，以及接受相应的工具，是一个默认异步执行机制的功能。
+
+        // JSON.parse()
+
+        // ajax的使用
+        // 1.创建XHR new XMLHttpRequest()
+
+        var xhr =  new XMLHttpRequest()
+        console.log(xhr)
+
+        // 2.配置链接信息： open(请求方式，请求地址，是否异步)
+        // 请求方式：get没有post安全
+        // localhost本机域名 127.0.0.1本机ip地址
+        // xhr.open("GET","http://127.0.0.1:5500/my_JavaScript/22-js-AJAX/1.txt")
+        // xhr.open("GET","http://localhost:5500/my_JavaScript/22-js-AJAX/1.txt")
+        // xhr.open("GET","http://localhost:5500/my_JavaScript/22-js-AJAX/2.txt")  //错误地址情况
+        xhr.open("GET","http://localhost:5500/my_JavaScript/22-js-AJAX/1.json")
+
+        // 3.发送请求：send
+        xhr.send()
+
+        // 4.接受数据，注册一个事件
+        // // readyStateChange 事件:专门用来监听 ajax 对象的 readyState 值改变的的行为，每次 readyState 改变的时候都会触发该事件
+        // // btn.onclick = function(){}
+        // xhr.onreadystatechange = function(){
+        //     // console.log(11111)
+
+        //     // xhr.readyState：ajax状态码,2，3，4会执行
+        //     // xhr.responseText:记录服务端给我们的响应体内容，存放拿到的数据，状态码为4的时候拿到的数据最完整
+        //     // console.log(xhr.readyState)  
+        //     console.log(xhr.readyState,xhr.responseText)  
+            
+        //     // xhr.readyState：ajax状态码为4
+        //     // xhr.status：http状态码为200 ~ 299，200表示OK，404表示未找到页面
+        //     if (xhr.readyState === 4 && xhr.status === 200){
+        //         console.log("数据解析完成",xhr.responseText) 
+        //         document.write(xhr.responseText)
+        //     }else if(xhr.readyState === 4 && xhr.status === 404){
+        //         console.log("没有找到这个页面")
+        //         location.href = '404.html'
+
+        //     }
+        // }
+
+
+        //onload回调函数，只在4的时候执行，比onreadyStateChange少调用23情况
+        xhr.onload = function(){
+            // console.log(xhr.readyState) 
+            // console.log(xhr.responseText)
+
+            if(xhr.status===200){
+                // document.write(xhr.responseText)
+                console.log(xhr.responseText)  //JSON字符串
+                console.log(JSON.parse(xhr.responseText)) //JSON对象
+            }else if(xhr.status===404){
+                console.log("未找到这个页面")
+            }
+        } */
+
+    </script>
+
+    <!-- ajax案例 -->
+    <script>
+        // ajax案例
+        
+    </script>
+
+    <!-- ajax同步异步 -->
+    <script>
+/*         var xhr = new XMLHttpRequest()
+
+        // 第三个参数：一般要么不传，要么传true，传false性能不好会报警
+        // true表示异步请求:send已经完成了，onload回调函数已经赋值了，但是不会等它执行完，会直接执行后面的函数,不会导致堵塞
+        // false表示同步请求：必须等send后拿到的数据回来了，回调函数被执行了，后面的函数才有机会执行。
+        xhr.open("GET","./2.json",true)
+
+        xhr.send()
+
+        // 如果设成false，要把这个函数放send前面去才能看到结果
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                console.log(xhr.responseText)
+            }
+        }
+
+        console.log("1111111111") */
+    </script>
+
+    <!-- ajax请求方式 -->
+    <!-- <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button> -->
+    <script>
+     /*    //form标签：method属性有两个值get/post，规定用于发送表单数据的HTTP方法
+        // ajax也有get/post两种方式，前者不够安全，且有数据长度限制，后者安全一点，数据长度限制小，一般要后端配合使用
+        // ajax更多的请求方式：
+        // 常用的：
+        // get：偏向获取数据，查
+        // post：偏向提交数据，增
+        // put：偏向更新（全部），改
+        // patch：偏向部分修改，改
+        // delete：偏向删除信息，删
+        // 不常用的：
+        // header：获取服务器的头信息
+        // option：获取服务器的设备信息
+        // connect：保留请求方式
+
+        // 普通json文件只能接受get，不能post，正常开发环境后端是nodejs，但可以用json-server来模拟后端接口
+        // 后端：nodejs
+        // 模拟：nodejs的json-server插件：基于一个json文件就可以创建很多的后端模拟接口
+        // 官网下载安装nodejs，node -v确认安装成功版本
+        // 利用npm install json-server -g安装json-server，然后json-server -v确认安装成功版本
+        // 当前目录下创建一个test.json文件，输入内容
+        //terminal输入json-server .\test.json --watch
+        // 浏览器输入上面提示的url，localhost:3000,打开了json server页面，点开resources下面的key值链接，打开就是我们输入的test.json文件对应key下面的内容
+
+        myget.onclick = function(){
+            var xhr = new XMLHttpRequest()
+            xhr.open("GET","http://localhost:3000/users")  //获取所有数据
+            // xhr.open("GET","http://localhost:3000/users?username=ximen")  //地址带参数,获取指定数据,所以说明文不安全.post是在请求体中,url中看不到
+            // xhr.open("GET","http://localhost:3000/users?username=ximen&password=345")  //获取指定数据
+
+
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+
+            xhr.send()
+        }
+
+        mypost.onclick = function(){
+            var xhr = new XMLHttpRequest()
+            xhr.open("POST","http://localhost:3000/users")
+
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+
+            // post请求需要在send内提交信息
+            // post支持表单字符串：post name=kerwin&age=100
+            // post支持json字符串：post {"name":"kerwin"}
+            // setRequestHeader()里定义用哪种方式
+
+            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")   // form编码格式：name=kerwin&age=100
+            // xhr.send(`username=gangdan&password=123`)
+
+            xhr.setRequestHeader("Content-Type","application/json")   // json格式
+            xhr.send(JSON.stringify({
+                username:"ximen",
+                password:"789 "
+            }))
+        }
+
+        myput.onclick = function(){
+            var xhr = new XMLHttpRequest()
+            xhr.open("PUT","http://localhost:3000/users/1") //告诉后端要修改id1
+
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+
+            xhr.setRequestHeader("Content-Type","application/json")   // json格式
+            xhr.send(JSON.stringify({
+                username:"xime11111"  //会覆盖原来的id1里全部内容
+            }))
+        }
+
+        mypatch.onclick = function(){
+            var xhr = new XMLHttpRequest()
+            xhr.open("PATCH","http://localhost:3000/users/2") //告诉后端要修改id2
+
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+
+            xhr.setRequestHeader("Content-Type","application/json")   // json格式
+            xhr.send(JSON.stringify({
+                username:"xiaoming2222"  //部分修改id2里对应内容
+            }))
+        }
+
+        mydelete.onclick = function(){
+            var xhr = new XMLHttpRequest()
+            xhr.open("DELETE","http://localhost:3000/users/7") //告诉后端要删除id7
+
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+        
+            xhr.send()
+        }
+ */
+    </script>
+
+    <!-- ajax封装 -->
+    <!-- <script src="./util.js"></script> -->
+    <script>
+        // ajax({
+        //     // url:"http://localhost:3000/users333",  //触发第一个error
+        //     url:"http://localhost:3000/users",
+        //     //默认是get，所以想get可以不用写
+        //     //get默认不用data，带参数get要data
+        //     data:{
+        //         username:"kerwin111",
+        //         password:5555
+        //     },
+        //     // get不需要header{}
+        //     //成功了之后，当前业务要在这里写业务逻辑
+        //     success:function(res){ 
+        //         console.log("success",res) 
+        //     }, 
+
+        //     //失败了之后，在这里写处理逻辑
+        //     // 这个function不会自己执行，在特定的条件下调用ajax这个函数时满足条件（失败了），
+        //     error:function(err){  
+        //         console.log("error",err)
+        //     }
+        // })
+
+        // ajax({
+        //     url:"http://localhost:3000/users",
+        //     method:"POST", 
+        //     data:{
+        //         username:"kerwin333",
+        //         password:5555
+        //     },
+        //     // data:"username=aaaa&password=4444",
+        //     headers:{
+        //         // "content-type":"application/x-www-form-urlencoded"
+        //         "content-type":"application/json"
+        //     },
+        //     success:function(res){ 
+        //         console.log("success",res) 
+        //     }, 
+        //     error:function(err){  
+        //         console.log("error",err)
+        //     }
+        // })
+    </script>
+
+    <!-- ajax封装实现请求方式代码 -->
+    <!-- <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    <script src="./util.js"></script> -->
+    <script>
+       /*  myget.onclick = function(){
+            ajax({
+                url:"http://localhost:3000/users",
+                // data:{
+                //     username:"kinwin",
+                //     password:789
+                // },
+                success:function(res){ 
+                    console.log("success",res) 
+                }, 
+                error:function(err){  
+                    console.log("error",err)
+                }
+            })
+        }        
+
+        mypost.onclick = function(){
+             ajax({
+                url:"http://localhost:3000/users",
+                method:"POST", 
+                data:{
+                    username:"kerwin444",
+                    password:5555
+                },
+                headers:{
+                    // "content-type":"application/x-www-form-urlencoded"
+                    "content-type":"application/json"
+                },
+                success:function(res){ 
+                    console.log("success",res) 
+                }, 
+                error:function(err){  
+                    console.log("error",err)
+                }
+             })
+        }
+
+        myput.onclick = function(){
+            ajax({
+                url:"http://localhost:3000/users/1",
+                method:"PUT", 
+                data:{
+                    username:"ximen",
+                    password:456
+                },
+                headers:{
+                    "content-type":"application/json"
+                },
+                success:function(res){ 
+                    console.log("success",res) 
+                }, 
+                error:function(err){  
+                    console.log("error",err)
+                }
+             })
+        }
+
+        mypatch.onclick = function(){
+            ajax({
+                url:"http://localhost:3000/users/1",
+                method:"PATCH", 
+                data:{
+                    username:"ximenTEA"
+                },
+                headers:{
+                    "content-type":"application/json"
+                },
+                success:function(res){ 
+                    console.log("success",res) 
+                }, 
+                error:function(err){  
+                    console.log("error",err)
+                }
+             })
+        }
+
+        mydelete.onclick = function(){
+            ajax({
+                url:"http://localhost:3000/users/1",
+                method:"DELETE", 
+                success:function(res){ 
+                    console.log("success",res) 
+                }, 
+                error:function(err){  
+                    console.log("error",err)
+                }
+             })
+        } */
+    </script>
+
+
+</body>
+</html>

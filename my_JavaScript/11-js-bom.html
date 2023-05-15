@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width: 2000px;
+            height:2000px;
+        }
+    </style>  
+    <script>
+        // // 不用unload的话，直接打印btn会undefined
+        //  onload = function(){
+        //     // 页面所有的资源（图片，视频，dom）都加载完后执行
+        //     console.log("加载完成")
+        //     console.log(btn)
+        // }
+    </script>
+     
+</head>
+<body>
+   <button id="btn">click</button>
+   <button id="btn2">click2</button>
+    <script>
+      /*   // 浏览器窗口尺寸
+        // console.log(innerHeight,innerWidth) */
+
+       /*  // 浏览器弹出层，alert，confirm，prompt
+        // alert("提示框")
+        // btn.onclick = function(){
+        //     alert("用户名密码不匹配")
+        //     setTimeout(function(){
+        //         alert("缓存清除成功")
+        //     },2000)
+        // }
+
+        // confirm("询问框")，不同浏览器可能不一样外观，一般开发会用DOM自己设计的框
+        // btn.onclick = function(){
+        //     var res = confirm("你确定删除吗？")
+        //     console.log(res)
+        //     if(res){
+
+        //     }else{
+
+        //     }
+        // }
+
+        // prompt("输入框"),这三个方法用得少，因为会阻塞后面代码执行
+        // btn.onclick = function(){
+        //     var res = prompt("请输入你的用户名：")
+        //     console.log(res)
+        // } */
+
+        /* // 浏览器地址信息:location.href,location.reload
+            console.log(location)
+            console.log(location.href)
+
+            btn.onclick = function(){
+                location.href = "http://www.baidu.com"
+            }
+
+            // reload,未来使用不太多。不要写在全局，不然浏览器就会一直处在刷新状态
+            btn2.onclick = function(){
+                location.reload()
+            } */
+
+        /* // 浏览器的常见事件：onclick,onload,onresize,onscroll
+        // onload事件
+        // onload = function(){
+        //     // 页面所有的资源（图片，视频，dom）都加载完后执行
+        //     console.log("加载完成")
+        // }
+        // console.log(btn)
+
+        // onresize事件
+        // 浏览器上改变窗口大小就执行
+        // onresize = function(){
+        //     console.log('resize')
+        // }
+
+        // onscroll事件
+            onscroll = function(){
+                console.log("scroll","滚动距离达到指定距离了吗？")
+            } */
+
+        /* // 浏览器滚动距离，待看 */
+
+       /*  // 浏览器打开标签页：open,跟set location.href区别是新标签页打开
+        // 关闭标签页：close，把自己当前窗口关了
+        btn.onclick = function(){
+            open("http://www.baidu.com")
+        }
+
+        btn2.onclick = function(){
+            close()
+        } */
+
+        /* // 浏览器历史记录,待看 */
+    
+        /* // 本地存储：localStorage,sessionStorage,待看
+        // localStorage.setItem("name","kerwin")
+        // localStorage.getItem("name") */
+
+        /* // 案例：记住用户名，待看 */
+
+
+    </script>
+</body>
+</html>

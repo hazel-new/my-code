@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="box" ></div>
+    <!-- <ul>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+    </ul> -->
+
+    <!-- <input name="username" type="text" />
+    <input name="password" type="password" /> -->
+    <input type="text" value="hello" id="username" />
+    <input type="checkbox" checked id="remember">
+
+    <img src="" alt="" id="photo">
+    
+
+    <script>
+        // console.log(box)
+        // box.innerHTML = "11111"
+    </script>
+
+    <!-- 获取一个元素 -->
+    <script>
+        // 获取一个元素：
+        // 1.三个非常规：html,head,body。【document.documentElement,document.head,document.body】
+        // 2.常规：id，class，tag等。【getElementById,getElementsByClassName,getElementsByTagName,getElementsByName, querySlector,querySlectorAll】
+                
+        /* //  1.三个非常规：html,head,body 【document.documentElement,document.head,document.body】
+        console.log(document.documentElement) //rem
+        console.log(document.head) //获取head
+        console.log(document.body) //获取body */
+
+        /* // 2.常规：id，class，tag等。【getElementById,getElementsByClassName,getElementsByTagName,getElementsByName, querySlector,querySlectorAll】
+
+        // getElementById:是通过标签的 id 名称来获取标签的.没有兼容性问题
+        console.log(document.getElementById("box"))
+        var obox = document.getElementById("box")
+        obox.innerHTML = "111111"
+
+
+        // getElementsByClassName:用过标签的 class 名称来获取标签
+        var items = document.getElementsByClassName("newsitem")
+        console.log(items) //伪数组，实际不是真正的数组 
+        
+        // items[0].innerHTML = "news-1111"
+
+        for(var i=0;i<items.length;i++){
+            items[i].innerHTML = "news-" + i
+        }
+
+        // Set => Array.from
+        var newitems = Array.from(items)
+        console.log(newitems.map)
+
+
+        // getElementsByTagName 是用过标签的 标签 名称来获取标签的
+        var items = document.getElementsByTagName('li')
+        console.log(items)
+
+
+        // getElementsByName:过标签的 name 名称来获取标签,一般用在input场景下
+        var item = document.getElementsByName('username')
+        console.log(item[0])
+        item[0].value = 'kerwin'
+
+
+        // querySlector,返回一个对象,兼容性问题，老版本浏览器可能不支持
+        var item = document.querySelector("ul li")
+        console.log(item) 
+
+
+        // querySlectorAll,返回一个对象 
+        var items = document.querySelectorAll("ul li.newsitem") 
+        console.log(items) */
+
+    </script>
+
+    <!-- 操作元素属性，待看 -->
+    <script>                 
+        /* // 操作元素属性
+        // 1.元素自带（原生）属性
+        // 2.自定义属性：setAttribute,getAttribute,removeAttribute,用得不多
+
+        // 操作原生属性:innerHTML,
+        box.innerHTML = '2222'
+        // console.log(username.type)
+        username.type = 'password'
+        // console.log(remember.checked)
+        remember.checked = false 
+        
+        // m.maizuo.com,选择图片，获得地址，如果不行就点击打开这个图片地址，然后copy过来
+        photo.src = "https://static.maizuo.com/pc/v5/usr/movie/03522e2bf3cda32231867999b163b525.jpg?x-oss-process=image/quality,Q_70"
+
+        // 自定义属性setAttribute,getAttribute,removeAttribute,用得不多
+        // box.teichui = '222222' // 不可以这样设置自定义属性
+        box.setAttribute("tiechui","22222")
+        console.log(box.getAttribute("tiechui"))
+        box.removeAttribute("tiechui") */
+
+    </script>
+</body>
+</html>

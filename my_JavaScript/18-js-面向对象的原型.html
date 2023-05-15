@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <div class="box2">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <!-- 面向对象的原型,prototype  -->
+    <script>
+       /*  // 面向对象的原型,prototype
+           //每一个函数天生自带一个成员，叫做 prototype，是一个对象空间
+           //每一个对象都天生自带一个成员，叫做 __proto__，是一个对象空间
+        //    当我们写构造函数的时候，属性我们直接写在构造函数体内，方法我们写在原型上
+        var data1 = {
+            title:"体育",
+            list:["体育-1","体育-2","体育-3"]
+        }
+
+        var data2 = {
+            title:"综艺",
+            list:["综艺-1","综艺-2","综艺-3"]
+        }
+
+        function CreateList(select,data){
+            this.ele = document.querySelector(select)
+            this.title = data.title,
+            this.list = data.list
+
+        //    不使用原型的方式，执行时会创建多个函数，占用内存
+            // this.render = function(){
+            //     //渲染页面
+            //     var h1 = this.ele.querySelector("h1") 
+            //     var ul = this.ele.querySelector("ul") 
+
+            //     console.log(h1,ul)
+
+            //     h1.innerHTML = this.title
+            //     ul.innerHTML = this.list.map(item=>`<li>${item}</li>`).join("")
+            // } 
+        }
+
+        //原型：共享内存，挂在函数的原型上
+        CreateList.prototype.render = function(){
+            //渲染页面
+            var h1 = this.ele.querySelector("h1") 
+            var ul = this.ele.querySelector("ul") 
+
+            h1.innerHTML = this.title
+            ul.innerHTML = this.list.map(item=>`<li>${item}</li>`).join("")
+        }
+
+        var obj1 = new CreateList(".box1",data1)
+        // var obj2 = new CreateList(data2.title,data2.list)
+
+        console.log(obj1.__proto__)
+        console.log(CreateList.prototype)
+        console.log(obj1.__proto__ === CreateList.prototype)
+        // console.log(obj2)
+
+        // obj1现在CreateList里找render()，找不到，然后就沿着__proto__找到CreateList.prototype,找到了
+        obj1.render()
+
+        var obj2 = new CreateList(".box2",data2)
+        obj2.render() */
+
+
+        // 对象.___proto__ === 构造函数.prototype
+
+        // 扩展：obj1.toString() //原型链概念
+    </script> 
+
+    <script>
+        function CreateObj(name){
+            this.name = name
+        }
+
+        CreateObj.prototype.getName = function(){
+            console.log("1111",this.name)
+        }
+
+        var obj1 = new CreateObj("kerwin")
+        // obj1.getName()
+        obj1.getName = function(){
+            console.log(22222)
+        }
+        obj1.getName()
+
+        var obj2 = new CreateObj("tiechui")
+        obj2.getName()
+    </script>
+</body>
+</html>

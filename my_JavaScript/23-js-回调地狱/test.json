@@ -1,0 +1,12 @@
+{
+    "news":[
+        {"id":1,"title":"年薪信息！","content":"文章内容1","author":"kerwin"},
+        {"id":2,"title":"震惊！年薪1元","content":"文章内容2","author":"tiechui"}
+    ],
+    "comments":[
+        {"id":1,"body":"我是男性","newsId":1},
+        {"id":2,"body":"我是女性","newsId":1},
+        {"id":3,"body":"我年薪2元","newsId":2},
+        {"id":4,"body":"我年薪3元","newsId":2}
+    ]
+}

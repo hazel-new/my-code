@@ -8,7 +8,8 @@
 </head>
 <body>
     <script>
-        /* var str = 'hello'
+        /* 字符串基本操作
+        var str = 'hello'
         console.log(str+" world")
 
         var str2 = new String('hello')
@@ -35,12 +36,11 @@
         str = 'aaa'
         console.log(str,str3) */
 
-
-       /*  // 案例：统计每个字母出现几次，{a:3,b:3,c:2}
+        /* // 案例：统计每个字母出现几次，{a:3,b:3,c:2}
         var str = 'abcabcab'
         // 目标：统计每个字母出现几次，{a:3,b:3,c:2} */
 
-       /*  // 字符串的常用方法:charAt,charCodeAt,toUpperCase,toLowerCase,substr, substring,slice,replace,split,indexOf,lastIndexOf,concat,trim, trimStart,trimLeft,trimEnd,trimRight
+        /* // 字符串的常用方法:charAt,charCodeAt,toUpperCase,toLowerCase,substr, substring,slice,replace,split,indexOf,lastIndexOf,concat,trim, trimStart,trimLeft,trimEnd,trimRight
         // chartAt(索引)：返回索引对应的字符
         // var str = 'kerwin'
         // var str1 = str.charAt(1)
@@ -117,19 +117,34 @@
 
         console.log(res) */
 
-        // JSON字符串 ==》对象
+        /* // JSON字符串 ==》对象
         // JSON格式：{"key":value,"key":value}
-        // 后端给前端发数据
+        // 后端给前端发数据:字符串转对象，JSON.parse()
         var str = '{"name":"kerwin","age":100}'
         // console.log(typeof(str))
         // console.log(str)
         var obj = JSON.parse(str)
         console.log(obj)
 
-        // 前端给后端发数据
+        // 前端给后端发数据：对象转字符串，JSON.stringify()
         var obj1 = {name:"tiechui"}
         var str1 = JSON.stringify(obj1)
-        console.log(obj1,str1)
+        console.log(obj1,str1) */
+
+        /* // 模板字符串，es6，反引号``,${},
+        var myhtml = '<li>111</li>\
+        <li>222</li>\
+        <li>333</li>'
+
+        var myhtml2 = `<li>111</li>
+        <li>222</li>
+        <li>333</li>`
+
+        var myname = "kerwin"
+        var str = `my name is ` + myname
+        var str2 = `my name is ${myname}, ${10+20}` 
+
+        document.write(str2) */
 
     </script>
 </body>

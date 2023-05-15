@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+
+<body>
+    <!-- 回调函数基本概念 -->
+    <script>
+        //传入的参数里有个属性是一个函数，调用的时候传进来的这个函数不会自己执行，除非在一定条件满足的前提下，把传进来的函数（）执行，表示传进来的函数被回过来调用了，所以叫回调函数。
+        // 就是传进来这个函数，将来会被调用。
+
+        // 回调函数是解决异步的一种思想，ajax是一种使用场景
+
+        /* // 先定义主函数和回调函数，然后再去调用主函数，将回调函数传进去
+        // 定义主函数的时候，我们让代码先去执行callback()回调函数，但输出结果却是后输出回调函数的内容。这就说明了主函数不用等待回调函数执行完，可以接着执行自己的代码。所以一般回调函数都用在耗时操作上面。比如ajax请求，比如处理文件等。
+        // 定义主函数
+        function A(callback){
+            callback(),
+            console.log("我是主函数")
+        }
+
+        // 定义回调函数
+        function B(){
+            setTimeout(function(){
+                console.log('我是回调函数')
+            },3000)
+        }
+
+        // 调用主函数，将函数B传进去
+        A(B) */
+
+    </script>
+
+    <!-- 回调地狱：就是回调函数嵌套过多导致的 -->
+    <script src="util.js"></script>
+    <script>
+        // tiechui已经登陆
+        ajax({
+            url: "http://localhost:3000/news",
+            data: {
+                author: "tiechui"
+            },
+            success: function (res) {
+                console.log(res[0])
+                ajax({
+                    url: "http://localhost:3000/comments",
+                    data: {
+                        newsId: res[0].id
+                    },
+                    success: function (res) {
+                        console.log(res)
+                    }
+                })
+            }
+        })
+    </script>
+
+    <!-- 2015年之前用q.js解决回调地狱问题 -->
+    <!-- 2015年之后，ES6自带promise构造函数，专门用来解决回调地狱/嵌套金字塔问题 -->
+</body>
+
+</html>

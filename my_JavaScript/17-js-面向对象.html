@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象</title>
+</head>
+<body>
+    <!-- 创建对象的方式 -->
+    <script>
+        // 创建对象的方式
+        /* // 字面量方式创建对象，直接写{}，在写的时候就添加好成员/动态添加成员
+        // var obj1 = {
+        //     name:"蒸羊羔",
+        //     material:[111,3333,3444],
+        //     setcook(){
+
+        //     }
+        // }
+
+        // var obj2 = {
+        //     name:"烧花鸭",
+        //     material:[111,3333,3444],
+        //     setcook(){
+
+        //     }
+        // } */
+
+        /* // 调用内置构造函数Object创建对象: new Object()创建一个对象，然后向对象中添加成员
+        // var obj1 = new Object()  //创建对象
+        // obj1.name = "蒸羊羔"    //向对象中添加成员
+
+        // var obj2 = new Object()
+        // obj2.name = "烧花鸭" */
+
+      /*   // 工厂函数：先写一个工厂函数，在这个函数里创造出一个对象，并添加属性，然后返回对象
+        // function createObj(name){
+        //    // 手动创建对象
+        //     var obj = {}
+        //     obj.name = name
+        //     obj.material = []
+        //    //手动返回对象 
+        //     return obj
+        // }
+        // var obj1 = createObj("蒸羊羔")
+        // console.log(obj1)
+
+        // var obj2 = createObj("烧花鸭")
+        // console.log(obj2) */
+
+       /*  // 自定义构造函数：1.和工厂函数的区别是只用手动添加成员，其他都是自动。2.构造函数和普通函数一样，只不过调用的时候前面要加new。加new就可以创建对象，不加new就是普通函数。
+        // new Object() new String() new Array()
+        // function CreateObj(name){
+        //     // 自动创建对象
+        //     this.name = name
+        //     this.material = []
+
+        //     this.cook = function(){
+
+        //     }
+        //     // 自动返回对象
+        // }
+        // var obj1 = new CreateObj("蒸羊羔")
+        // var obj2 = new CreateObj("烧花鸭")
+        // console.log(obj1,obj2) */
+
+        /* // 自定义构造函数特性：1.首字母大写 2.构造函数不要写return 3.构造函数能当成普通函数用,但是里面的this给Windows加属性了
+        // 1.首字母大写
+        // function CreateObj(name){
+        //     this.name = name
+        // }
+
+        // var obj1 = new CreateObj("kerwin")
+        // console.log(obj1)
+
+        // 2.构造函数不要写return。因为如果return普通类型会不生效，return复杂类型则会把当前函数输出替换成return的复杂类型了。
+        // function CreateObj(name){
+        //     this.name = name
+        //     return 100
+        //     // return {
+        //     //     a:1,
+        //     //     b:2
+        //     // }
+        // }
+        // var obj1 = new CreateObj("kerwin")
+        // console.log(obj1)
+
+        // 3.构造函数能当成普通函数用？能，但是里面的this给Windows加属性了
+        // function CreateObj(name){
+        //     console.log(this)  //this指向window了
+        //     this.name = name
+        // }
+        // // var obj1 = new CreateObj("kerwin")
+        // // console.log(obj1)
+
+        // var obj1 = CreateObj("kerwin")
+        // console.log(obj1,window.name) //前者因为没有return返回值，输出undefined。后者表示给windows加了个name属性。
+
+        // 4.this指向
+        // function CreateObj(name){
+        //     console.log(this)  //这里this指向实例化对象
+        //     this.name = name
+
+        //     this.cook = function(){
+        //         console.log(this.name) //this指向原则：谁调用我，我就指向谁。这里是obj1调用cook，this就指向obj1，打印kerwin
+        //     }
+        // }
+        // var obj1 = new CreateObj("kerwin") //new过程===实例化这个过程
+        // // 实例对象已经生成了
+        // // console.log(obj1)
+        // obj1.cook() */
+        
+    </script>
+</body>
+</html>

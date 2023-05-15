@@ -8,8 +8,8 @@
     <script src="js/functions.js"></script>
 </head>
 <body>
-    <script>
-        /* 函数：关键字function，函数是一个复杂数据类型 */        
+    <!-- 函数：关键字function，函数是一个复杂数据类型 -->
+    <script>  
         /*  // 1.定义函数
         // （1）声明式：先调用再定义；函数名定义好了;
             function test1(){
@@ -20,16 +20,20 @@
                 console.log("我是test2套餐")
             }
 
-        // （2）赋值式：先定义再调用；没想好函数名，先赋值给一个变量，这个变量代表了函数
+        // （2）赋值式：先定义再调用；没想好函数名，先赋值给一个变量，这个变量代表了函数。这种语法定义的函数可以是命名函数或匿名函数。匿名函数是自调用的，IIFE. ()运算符调用该函数。
             var test3 = function(){
                 console.log("我是test3套餐")
             }
             */ 
+
+
         /*  // 2.调用函数
             test1()
             test2()
             test3() */
-        /* // 函数实现九九乘法表
+
+
+        /* //案例：函数实现九九乘法表
         function multiplication_table(){
             for (var m = 1; m <= 9; m++){
                 for (var n = 1; n <= m; n++){
@@ -39,10 +43,13 @@
             }
         }
         multiplication_table() */
+
+
         /* // 函数参数
         // 1.实参 VS 形参
         // 2.可以传参，可以不传参
         // 3.形参只能在函数内部去使用 
+
         // 定义了两个形参
         // function test(a,b){
         //     var yinliao = a===1?'可乐':'雪碧'
@@ -55,6 +62,8 @@
         // test(2,1)
 
         // test()
+
+
         // 函数参数实例
         // 1.九九乘法表
         // function test(target){
@@ -78,6 +87,8 @@
         // test(6)
         // // test()
         */
+
+
         /* // 函数的返回值 return
         // 1.return可以不写，看需求加
         // 2.return后面无法执行了，函数结束了，打断函数执行
@@ -133,6 +144,8 @@
                 console.log(i)
             }
         } */
+
+
         /* // 预解析：js是解释型代码，预解析就是在所有代码执行之前先进行解释
         // var定义的变量和声明式函数会预解析，放到script最前面，访问的时候不会报错，只是提示undefined
         console.log(myname)
@@ -157,6 +170,8 @@
         }
 
         test() */
+
+
         /* // 重名
         // var myname ='ffff'
         // var myname = 'dddd'
@@ -185,11 +200,14 @@
 
         // console.log(age)
         // age() // 变量名和函数名冲突了，报错 */
+
+
         /* // 作用域：一个变量可以生效的范围
         // 全局作用域：任何地方地方都能使用，直到页面关闭
         // 局部作用域：js中只有函数能生成一个局部作用域
         // 访问：获取一个变量的值，就近原则，全局都没有就报错
         // 赋值：改变变量的值，就近原则，全局没有就把这个变量定义为全局变量，再赋值
+
         // var myname = 'hairong'
 
         // function test(){
@@ -218,6 +236,8 @@
         test1()
         console.log("修改后，", num) */
     </script>
+
+    <!-- 作用域 -->
     <script>
         // 作用域
         // console.log(myname)

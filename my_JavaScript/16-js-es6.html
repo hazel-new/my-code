@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6</title>
+</head>
+<body>
+    <!-- <input type="text" id="mytext"> -->
+
+    <!-- <input type="text" id="myusername">
+    <input type="password" id="mypassword">
+    <button id="mybtn">login</button> -->
+
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+
+    <!-- let和const关键字 -->
+    <script>
+     /* // var,变量声明提升问题
+        // console.log(a)
+        // let a = 100
+        // console.log(a) */
+        
+    /* //let和const 与var区别1 ：没有变量提升，必须先定义再使用；
+        // console.log(a)
+        // let a = 100
+        // console.log(a)
+        // 与var区别2：变量重名
+        // var name = "Aaa"
+        // var name = "bbbbb"
+        // let name = "Aaa"
+        // let name = "bbbbb"
+        // console.log(name)
+        // 与var区别3：块级作用域，只在{}内；var只有函数能限制其作用域
+        // if(true){
+        //     // var i = 100
+        //     let i = 100
+        //     console.log(i)
+        // }
+
+        // console.log(i) */
+
+    /* // let与const的区别
+        // 1.let 声明的变量的值可以改变，const 声明的变量的值不可以改变
+        // 2.let 声明的时候可以不赋值，const 声明的时候必须赋值 */
+    </script>
+
+    <!-- 箭头函数，注意里面的this -->
+    <script>
+        /* // 箭头函数写法：(函数的行参) => { 函数体内要执行的代码 }，
+        跟普通赋值式函数定义写法相比，省略function关键字，在()跟{}之间增加了一个箭头=>，其他写法一样
+        // var test1 = function(){
+        //     console.log("1111")
+        // }
+
+        // 跟普通赋值式函数定义写法相比：省略function关键字，在()跟{}之间增加了一个箭头=>，其他写法一样
+        // var test2 = () => {
+        //     console.log("22222")
+        // }
+
+        // test1()
+        // test2() */
+
+        /* // 箭头函数的特点：1.（）可以省略:只有一个形参的时候，其他时候不可以。 2.{}可以省略：只有一句代码【可以但不常用】，或只有返回值的时候，return也要省略了【这种更常用】，注意返回一个对象结构的时候，要加一个小括号(),防止对象的{}引起困扰。3.没有arguments.4.this问题：箭头函数没有this，箭头函数的this是父级作用域的。
+
+        // 1.（）可以省略:只有一个形参的时候，其他时候不可以
+        // var test = a => {
+        // // var test = (a) => {
+        // // var test = (a,b) => {
+        //     console.log(11111,a)
+        // }
+
+        // test("kerwin")
+
+        // 2.{}可以省略：只有一句代码【可以但不常用】，或只有返回值的时候，return也要省略了【这种更常用】，注意返回一个对象结构的时候，要加一个小括号(),防止对象的{}引起困扰
+        // var test = a => 100*a
+        // console.log(test(10))
+
+        // var list = ['aaa','bbb','ccc']
+        // // var newlist = list.map(function(item){
+        // //     return `<li>${item}</li>`
+        // // })
+        // var newlist = list.map(item=> `<li>${item}</li>`)
+        // console.log(newlist.join(""))
+
+        // var test = () => ({
+        //     name:"erwin"
+        // })
+
+        // console.log(test())
+        
+        // 3.没有arguments
+        // var test = function(a,b,c){
+        // var test = (a,b,c) => {
+        //     console.log(a,b,c)
+        //     console.log(arguments) //伪数组，没有数组的方法比如map等，需要先转成真数组再操作
+        //     console.log(Array.from(arguments)) //用Array.from()把伪数组强行转化为真数组
+        //     console.log(arguments[0],arguments[1],arguments[2])
+        // }
+        // test(1,2,3)
+
+        // 4.this问题：箭头函数没有this，箭头函数的this是父级作用域的。
+        // 使用场景：函数里面套函数，一般函数的this就是里面函数自己的，而箭头函数的this是外面父级函数的。
+        // mytext.oninput = function(){
+        //     // console.log(this.value)
+
+        //     // var that = this
+        //     // setTimeout(function(){
+        //     //     // console.log(this) //作用域，这里this指向的是window，所以不能写成this.value,因为window下面没有value这个值。一般是另外定义一个值that保存this,然后用that.value就可以。           
+        //     //     console.log(that.value)
+
+        //     // },1000)
+
+        //     setTimeout(()=>{
+        //         console.log(this.value) //这里的this是箭头函数里的，直接就是上一级函数的，所以可以直接写this.value
+        //     },1000)
+        // } */
+
+        /* // 函数的默认参数
+        // function test(a,b){
+        // function test(a=1,b=2){
+        //     return a+b
+        // }
+
+            var test = (a=1,b=2) => a+b
+            console.log(test(10,20))
+            console.log(test()) */
+        
+    </script>
+
+    <!-- ES6的解构赋值 -->
+    <script>
+    /* // ES6的解构赋值
+        // 解构：快速地从对象和数组中获取里面的成员
+        var arr = ["xm",'tc','sz']
+        // 常规写法
+        // console.log(arr[2])
+        // 数组解构写法：定义一个结构一样的变量，但是没法单独取到后面的值，必须先取前面的
+        // let [x,y,z] = arr
+        // console.log(x,y,z)
+        // let [z] = arr
+        // console.log(z)
+
+        // 数组解构方法使用场景：不要用let
+        // var a = 10
+        // var b = 20
+        // var [b,a] = [a,b]
+        // console.log(a,b)
+
+        // 多维度数组场景
+        // var arr2 = [1,2,[3,4,[5]]]
+        // console.log(arr2[2][2][0])
+        // var [q,w,[e,r,[t]]] = arr2
+        // console.log(t)
+
+        // 对象解构方法
+        // 常规obj
+        // var obj = {
+        //     name:'kekre',
+        //     age:10,
+        //     location1:"dalian"
+        // }
+        // document.write(obj.name)
+        // document.write("<br>")
+        // document.write(obj.age)
+        // document.write("<br>")
+        // document.write(obj.location1)
+
+        // let {name,age,location1} = obj 
+        // // let {name,age:myname,location:mylocation} = obj //let定义不能有重名，可以这样写
+        // document.write(name)
+        // document.write(age)
+        // // document.write(myage)
+        // document.write(location1)
+        // // document.write(mylocation)
+
+        // 复杂obj
+        // var obj2 = {
+        //     name: "kerwin",
+        //     age:100,
+        //     location:{
+        //         province:"liaoning",
+        //         city:"dalian"
+        //     },
+        //     hobby:[111,333,555]
+        // }
+
+        // var {
+        //     name,
+        //     age,
+        //     location:{
+        //         province,
+        //         city
+        //     },
+        //     hobby:[m,j,k]
+        // } = obj2
+
+        // console.log(name,age,province,j) */
+    </script>
+
+    <!-- ES6的对象简写 -->
+    <script>
+    /* // ES6的对象简写
+        mybtn.onclick = function(){
+            let username = myusername.value
+            let password = mypassword.value
+            console.log(username,password)
+
+            // 对象简写1:key跟value一样的情况下,可以简写
+            var obj = {
+                // username:username,
+                // password:password
+                username,
+                password
+            }
+
+            console.log("发给后端的结构",obj)
+        }
+
+
+        // 对象简写2:省略:function
+        var obj = {
+            a:1,
+            // getName:function(){
+            getName(){
+                console.log(this.a)
+            }
+        }
+        obj.getName() */
+    </script>
+
+    <!-- ES6展开运算符:... -->
+    <script>
+    /*  // ES6展开运算符:...
+        //  ...展开数组
+        // var a = [1,2,3]
+        // var b = [4,5,6]
+        // console.log(a.concat(b))
+        // var c = [a,b]
+        // console.log(c)
+        // var d = [...a,...b]
+        // console.log(d)
+
+        // ...在数组深复制的使用,不影响原数组
+        // var a = [1,2,3]
+        // // var b = a
+        // // var b = a.slice()
+        // // var b = a.concat()
+        // var b = [...a]
+        // b[0] = 'hhei'
+        // console.log(a,b)
+
+        // ...参数-实参-形参,必须放在最后
+        // // var test = function(...arr){
+        // var test = (a,b,...arr) => {
+        //     // console.log(arguments)
+        //     console.log(arr)
+        // }
+        // test(1,2,3,4,5)
+
+        // ...传实参
+        // var arr =[1,2,3]
+        // var test = function(a,b,c){
+        //     console.log(a,b,c)
+        // }
+        // test(arr[0],arr[1],arr[2])
+        // test(...arr)
+
+        // var res = Math.max(1,2,4,7,8)
+        // console.log(res)
+        // var arr = [1,2,46,7,8,4,567,6655,76,5322,57,864]
+        // var res2 = Math.max(...arr)
+        // console.log(res2)
+
+        // ...在伪数组转换的使用
+        // function test(){
+        //     // var arr = Array.from(arguments)
+        //     var arr = [...arguments]
+        //     console.log(arr)
+        // }
+
+        // test(1,2,4,5,44,2)
+
+        // var oli = document.querySelectorAll('li')
+        // console.log(oli)
+        // var oliarr = [...oli]
+        // console.log(oliarr)
+
+        // ...展开对象 
+        // var obj1 = {
+        //     name:"kerwin",
+        //     age:100
+        // }
+        // var obj2 = {
+        //     name:"tiechui", // key同名的情况下，后者会覆盖前者
+        //     location:"dalian"
+        // }
+
+        // var obj = {
+        //     ...obj1,
+        //     ...obj2
+        // }
+
+        // console.log(obj) */
+    </script>
+
+    <!-- ES6模块化语法:待看 -->
+    <script>
+
+    </script>
+    
+</body>
+</html>

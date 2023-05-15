@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    <script>
+        /* // number方法
+        // var price = 12.45467
+        // console.log(price.toFixed(2)) */
+
+        /* // math对象：random,round,ceil/floor,abs,sqrt,pow,max/min,PI
+        // random(),0-1之间的数，包含0不包含1
+        console.log(Math.random())
+
+        // round()四舍五入取整
+        console.log(Math.round(4.46))
+
+        // ceil向上，floor向下
+        console.log(Math.ceil(4.46))
+        console.log(Math.floor(4.46))
+
+        // abs:绝对值
+        console.log(Math.abs(-10.2))
+
+        // sqrt：平方根
+        console.log(Math.sqrt(9))
+
+        // pow:底数，指数
+        console.log(Math.pow(2,3))
+
+        // max/min:（多个参数）
+        console.log(Math.max(12,464,75,42,33))
+        console.log(Math.min(12,464,75,42,33))
+
+        // PI:圆周率
+        console.log(Math.PI) */
+
+        /* // 案例-随机整数
+        // 0-10，不包括10
+        var res = Math.floor(Math.random()*10)
+        console.log(res)
+
+        // 0-10，包括10
+        var res1 = Math.floor(Math.random()*(10+1))
+        console.log(res1)
+
+        // 10-20,不包括20
+        var res2 = Math.floor(Math.random()*10)+10
+        console.log(res2)
+
+        // 10-20，包括20
+        var res2 = Math.floor(Math.random()*(10+1))+10
+        console.log(res2) */
+
+        /* // 函数：（min， max）,不包括max
+        function getRnd(min,max){
+            if(min>max){
+                console.error("参数有误")
+                return
+            }
+            return Math.floor((Math.random()*(max-min)))+min
+        }
+        console.log(getRnd(200,300)) */
+
+        /* // 函数：（min， max）,包括max
+        function getRnd2(min,max){
+            if(min>max){
+                console.error("参数有误")
+                return
+            }
+            return Math.floor((Math.random()*(max-min+1)))+min
+        }
+        console.log(getRnd2(20,22)) */
+
+    </script>
+    
+</body>
+</html>

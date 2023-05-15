@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+
+<body>
+    <!-- promise基础语法 -->
+    <script>
+        /*  // promise是一个构造函数，要new创建对象
+         var q = new Promise(function(resolve,reject){
+             // a()
+             // 异步代码：setTimeout/ajax等
+             setTimeout(()=>{
+                 // 成功兑现承诺,成功的回调
+                 resolve(['111','222','333'])
+ 
+                 // 失败拒绝承诺，失败的回调
+                 // reject("error")
+             },2000)
+         })
+         // 三个状态，只能从pending到fulfilled，或者pending到reject。
+         // 状态：pending，执行中；生成promise对象之后，处于这个状态。
+         // 状态：fulfilled，成功；如果2秒之后异步结束了，调用的resolve()方法，then中注册的回调函数就会被执行。
+         // 状态：reject，失败；如果2秒之后异步结束了，调用的reject()，catch中注册的回调函数就会被执行。
+ 
+         // q是promise对象
+         // 注册一个成功回调函数，一个失败回调函数
+         q.then(function(res){
+             // 兑现承诺，这个函数被执行
+             console.log("success",res)
+         }).catch(function(err){
+             // 拒绝承诺，这个函数就会被执行
+             console.log("fail",err)
+         }) */
+    </script>
+
+    <!-- promise封装ajax -->
+    <!-- 链式调用，跟回调地狱比更好，后面有更好的解决方法 -->
+    <script src="util.js"></script>
+    <script>
+        pajax({
+            url: "http://localhost:3000/news",
+            data: {
+                author: "tiechui"
+            }
+        }).then(res => {
+            // console.log(res[0])
+            return pajax({
+                url: "http://localhost:3000/comments",
+                data:{
+                    newsId: res[0].id
+                }
+            })
+        }).then(res=>{
+            console.log("success",res)
+        }).catch(err=>{
+            console.log("error",err)
+        })           
+                    
+    </script>
+</body>
+
+</html>

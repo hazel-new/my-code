@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异步执行</title>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        // 同步：
+        /* // 异步：setTimeout里的回调函数异步执行，必须要同步执行完，再执行异步。目前知识里，只有setTimeout()和setInterval()
+        // 以后会专门讲事件循环，宏任务
+        console.log("11111")
+
+        setTimeout(function(){
+            console.log("kkkkkkkk")
+
+        },2000)
+
+        console.log("22222") */
+
+        /* // 案例：倒计时。给一个目标时间比如618，以当前时间为基准，计算出差值，显示在页面中，并实时变化
+        
+        var targetDate = new Date("2023/6/18")
+
+        // console.log(targetDate - currentDate) //时间戳，对象一减自动得到时间戳
+
+        function diffTime(current, target) {
+            var sub = Math.ceil(target - current) / 1000  //用秒计算
+
+            var day = parseInt(sub / (60 * 60 * 24))
+            var hours = parseInt(sub % (60 * 60 / 24) / (60 * 60))
+            var minutes = parseInt(sub % (60 * 60) / 60)
+            var seconds = parseInt(sub % 60)
+
+            var obj = {
+                day: day,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            }
+
+            return obj
+        }
+
+        setInterval(function () {
+            var currentDate = new Date()
+            var res = diffTime(currentDate, targetDate)
+            // console.log(res)
+            // document.write(`京东618-${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`)
+            // document.write("<br>")
+
+            // console.log(box)
+            box.innerHTML = `京东618-${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`
+        }, 1000)
+ */
+    
+    </script>
+</body>
+
+</html>
