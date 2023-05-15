@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6-class</title>
+</head>
+
+<body>
+    <script>
+        // class是语法糖，和其他语言接轨
+        // function CreateObj(name){
+        //     this.name = name
+        // }
+
+        // CreateObj.prototype.say = function(){
+        //     console.log(this.name,"hello")
+        // }
+
+        class CreateObj {
+            // 构造器函数
+            // 构造器里做属性的挂载
+            constructor(name) {
+                this.name = name
+            }
+            // 原来挂载在原型下面的函数
+            say() {
+                console.log(this.name, "hello")
+            }
+        }
+
+        // CreateObj.prototype.say = function(){
+        //     console.log(this.name,"hello")
+        // }
+
+        var obj = new CreateObj("kerwin")
+        console.log(obj)
+        obj.say()
+    </script>
+</body>
+
+</html>

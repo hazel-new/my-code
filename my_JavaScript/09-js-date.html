@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <button id="btn1">清除定时器-延时</button>
+    <button id="btn2">清除定时器-间隔</button>
+   
+   <script>
+        /* // new Date()
+        var date = new Date()
+        console.log(date)  //date是对象，但会自动转成字符串在控制台显示
+
+        // new Date传参
+        // 1个传参，毫秒数，1970/1/1 00:00:00,场景：后端传来时间戳
+        var date1 = new Date(1000)
+        console.log(date1)   
+        
+        // 2个参数,3个参数
+        var date2 = new Date(2023,0,5)
+        console.log(date2)
+
+        // 字符串
+        var date3 = new Date("2023-10-10 10:00:09")
+        var date4 = new Date("2023/10/10 10:00:09")
+        console.log(date3)
+        console.log(date4) */
+
+        /* // 时间对象date常用方法
+        var date = new Date()
+
+        // getFullYear():得到指定字符串中的哪一年
+        // console.log(date.getFullYear())
+
+        // getMonth():得到指定字符串中的哪一个月份,输出是0-11，对应1-12月
+        // console.log(date.getMonth())
+
+        // getDate():得到指定字符串中的哪一天
+        // console.log(date.getDate())
+
+        // getDay() 方法是得到指定字符串当前日期是一周中的第几天（周日是 0，周六是 6）
+        // getHours() 方法是得到指定字符串中的哪小时
+        // getMinutes() 方法是得到指定字符串中的哪分钟
+        // getSeconds() 方法是得到指定字符串中的哪秒钟
+        // getMilliseconds():得到毫秒
+        // getTime()：得到执行时间到格林威治时间（1970-1-1 0点）的毫秒数,也叫时间戳
+
+        // 设置,setFullYear,setMonth,setDate,setHours,setMinutes,setSeconds,setTime。没有setday
+        // console.log(date)
+
+        // date.setFullYear(2025)
+        // console.log(date) */
+
+        /* // 定时器：setTimeout(),setInterval(),clearTimeout(), clearInterval()
+        // 1.倒计时定时器：倒计时多少时间以后执行函数，只能执行一次
+        // setTimeout(要执行的函数，多长时间以后执行),毫秒
+       var time1 = setTimeout(function(){
+            console.log('kerwin')
+        },2000) //注册定时器
+
+        // 2.间隔定时器：每间隔多少时间就执行一次函数，可以多次执行
+        // setInterval(要执行的函数，间隔多少时间)
+        var time2 = setInterval(function(){
+            console.log(new Date())
+        },1000) //注册间隔定时器
+
+        // 3.定时器的返回值,先注册的为1，后注册的为2
+        console.log(time1)
+        console.log(time2)
+
+        // 4.关闭定时器，clearTimeout 和 clearInterval      
+       
+        // console.log(btn1,btn2) //直接通过id，拿到按钮对象
+        btn1.onclick = function(){
+            console.log("btn1 click")
+            clearTimeout(time1)
+        }
+
+        btn2.onclick = function(){
+            console.log("btn2 click")
+            clearInterval(time2)
+        } */
+
+    </script>
+</body>
+</html>

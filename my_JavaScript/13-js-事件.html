@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background:yellow ;
+        }
+        #child{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box">aaaa</div> -->
+    <!-- <div id="box2">bbbbb</div> -->
+    <!-- <button id="btn">抽奖</button> -->
+
+    <button id="btn">click</button>
+    <!-- <button id="btn2">mouse</button> -->
+    <!-- <div id="box">mouse</div> -->
+    <div id="box">
+        <div id="child">
+
+        </div>
+    </div>
+
+
+    <!-- // 事件绑定和解绑 -->
+    <script>
+        /* // 事件绑定1：dom0类型，onxxxx，缺点是后面的会覆盖前面的
+        box.onclick = function(){
+            console.log("1111")
+        }
+
+        box.onclick = function(){
+            console.log("2222")
+        } */
+
+        /* // 事件绑定2：dom2类型，绑定多个事件处理函数，按照顺序执行.ie低版本不支持
+        box2.addEventListener("click",function(){
+            console.log("222222")
+        })
+        box2.addEventListener("click",function(){
+            console.log("33333")
+        })
+        box2.addEventListener("click",function(){
+            console.log("444444")
+        }) */
+
+       /*  // 事件解绑1:dom0,dom节点.onclick = null
+        // btn.onclick = function(){
+        //     console.log("谢谢惠顾")
+
+        //     // console.log(this)
+        //     this.disabled = "disabled"  //给按钮对象加个disabled属性，相当于<button id="btn" disabled="disabled">，不建议
+        // }
+
+        btn.onclick = function(){
+            console.log("谢谢惠顾")
+
+            // btn.onclick = null
+            this.onclick = null  
+        } */
+
+        /* // 事件解绑2:dom2,removeEventListener
+        function handler() {
+            console.log("谢谢惠顾")
+            
+            this.removeEventListener("click",handler)
+        }
+        btn.addEventListener("click",handler)  */
+
+    </script>
+
+    <!-- 常见事件类型 -->
+    <script>
+    // 鼠标事件
+        /* // click ：点击事件
+        // dblclick ：双击事件
+        btn.onclick =  function(){
+            console.log("单击执行")
+        }
+
+        btn.dbclick = function(){
+            console.log("双击执行")
+        }
+        // contextmenu ： 右键单击事件
+        btn.oncontextmenu = function(){
+            console.log("右键单击，自定义右键菜单")
+        } 
+        //任意地方右击
+        document.oncontextmenu = function(){  
+            console.log("右键单击，自定义右键菜单")
+        } */
+       
+        /* // mousedown ：鼠标左键按下事件
+        // mouseup ：鼠标左键抬起事件
+        // mousemove ：鼠标移动
+        box.onmousedown = function(){
+            console.log("鼠标按下")
+        }
+
+        box.onmousemove = function(){
+            console.log("鼠标移动")
+        }
+
+        box.onmouseup = function(){
+            console.log("鼠标抬起")
+        } */
+        
+        /* // mouseover ：鼠标移入事件
+        // mouseout ：鼠标移出事件
+        // 父和孩子都会触发
+        // box.onmouseover = function(){
+        //     console.log("移入")
+        // }
+        // box.onmouseout = function(){
+        //     console.log("移出")
+        // }
+
+        // mouseenter ：鼠标移入事件
+        // mouseleave ：鼠标移出事件
+        // 只会在当前绑定的盒子触发
+        // box.onmouseenter = function(){
+        //     console.log("移入")
+        // }
+        // box.onmouseleave = function(){
+        //     console.log("移出")
+        // } */
+
+    // 键盘事件
+            
+    </script>
+
+    <!-- 事件对象 -->
+    <script>
+
+    </script>
+    
+    <!-- 事件的传播 -->
+    <script>
+
+    </script>
+
+    <!-- 事件委托 -->
+    <script>
+        
+    </script>
+</body>
+
+</html>

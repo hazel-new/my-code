@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name
+            this.age = age
+        }
+
+        Person.prototype.say = function(){
+            console.log(this.name,"hello")
+        }
+
+        function Student(name,age,grade){
+            // this.name = name
+            // this.age = age
+            // 构造函数继承
+            Person.call(this,name,age)
+            this.grade = grade
+        }
+
+        // Student.prototype.say = function(){
+        //     console.log(this.name,"hello")
+        // }
+
+        // 原型继承
+        // 这种写法Student和Person会互相影响
+        // Student.prototype = Person.prototype
+        Student.prototype = new Person()
+
+        // 继承：基础上增加方法
+        Student.prototype.printGrade = function(){
+            console.log(this.name,this.grade)
+        }
+        // 继承：基础上覆盖方法
+        // Student.prototype.say = function(){
+        //     console.log(this.name,'hello')
+        //     console.log(this.name,'你好')
+        // }
+        // 继承：基础上增强原来方法
+        Student.prototype.say2 = function(){
+            this.say()
+            console.log(this.name,'你好')
+        }
+
+        var obj = new Student("kerwin",100,100)
+        console.log(obj)
+
+        obj.say()
+
+        obj.printGrade()
+
+        obj.say2()
+
+        // var obj2 = {
+        //     grade:100
+        // }
+
+        // // call强行给obj2挂了name和age属性
+        // Person.call(obj2,"kerwin",100)
+        // console.log(obj2)
+
+        // 构造函数继承：只能继承属性，不能继承原型上的方法
+        // 原型继承：继承原型上的方法
+        // 组合继承：一般开发都是组合继承，构造函数继承属性，原型继承方法
+
+    </script>
+</body>
+</html>

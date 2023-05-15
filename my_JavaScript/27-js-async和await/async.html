@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+</head>
+<body>
+    <script type="module">
+        import {pajax} from './util.js'
+        console.log(11111)
+        // async/await 是一个 es7 的语法，这个语法是 回调地狱的终极解决方案
+        async function test(){
+            // await后面：同步代码/promise对象
+            // await console.log(111)
+
+            // pajax({
+            //     url: "http://localhost:3000/news",
+            //     data:{
+            //         author:"kerwin"
+            //     }
+            // }).then(res=>{
+            //     console.log(res)
+            // })
+
+           var res = await pajax({
+                url: "http://localhost:3000/news",
+                data:{
+                    author:"kerwin"
+                }
+            })
+            console.log(res)
+
+            console.log(2222)            
+        }
+
+        test()
+        console.log(333333333)
+    </script>
+</body>
+</html>
