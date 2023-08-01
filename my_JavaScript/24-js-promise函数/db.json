@@ -1,0 +1,58 @@
+{
+  "list": [
+    "111",
+    "222",
+    "333"
+  ],
+  "users": [
+    {
+      "name": "kerwin",
+      "age": "100",
+      "id": 1
+    },
+    {
+      "name": "xiaoming",
+      "age": 18,
+      "id": 2
+    },
+    {
+      "name": "tiechui",
+      "age": "80",
+      "id": 3
+    },
+    {
+      "name": "gulu",
+      "age": 170,
+      "id": 4
+    },
+    {
+      "name": "tiechui",
+      "age": "80",
+      "id": 5
+    },
+    {
+      "name": "gandan",
+      "age": 60,
+      "id": 6
+    },
+    {
+      "name": "tiechui",
+      "age": "802",
+      "id": 7
+    },
+    {
+      "name": "gandan",
+      "age": 60,
+      "id": 8
+    },
+    {
+      "name": "gandan",
+      "age": 60,
+      "id": 9
+    }
+  ],
+  "shopcar": [],
+  "detail": {
+    "name": "手机"
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <button id="get">get</button>
+    <button id="post">post</button>
+    <button id="put">put</button>
+    <button id="patch">patch</button>
+    <button id="delete">delete</button>
+    <script>
+        var oget = document.querySelector("#get")
+        var opost = document.querySelector("#post")
+        var oput = document.querySelector("#put")
+        var opatch = document.querySelector("#patch")
+        var odelete = document.querySelector("#delete")
+
+        oget.onclick = function () {
+            axios.get("http://localhost:3000/users",{
+                params:{
+                    name:"kerwin",
+                    age:100
+                }
+            })
+            .then(res=>{
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log("err",err)
+            })
+        }
+        opost.onclick = function () {
+            // console.log("opost")
+            // axios.post("http://localhost:3000/users","name=tiechui&age=80")
+            // .then(res=>{
+            //     console.log(res.data)
+            // })
+            // .catch(err=>{
+            //     console.log("err",err)
+            // })
+
+            // const params = new URLSearchParams({name:"gulu",age:70});
+
+            // axios.post("http://localhost:3000/users",params)
+            // .then(res=>{
+            //     console.log(res.data)
+            // })
+            // .catch(err=>{
+            //     console.log("err",err)
+            // })
+
+            axios({
+                method:"post",
+                url:"http://localhost:3000/users",
+                //get params
+                //put post data
+                data:{
+                    name:"gandan",
+                    age:60
+                }
+            }).then(res=>{
+                console.log(res)
+            })
+        }
+        oput.onclick = function () {
+            // console.log("opost")
+            axios.put("http://localhost:3000/users/4",{
+                name:"gulu",
+                age:170
+            })
+            .then(res=>{
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log("err",err)
+            })
+        }
+        opatch.onclick = function () {
+            axios.patch("http://localhost:3000/users/4",{
+                age:270
+            })
+            .then(res=>{
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log("err",err)
+            })
+        }
+        odelete.onclick = function () {
+            axios.delete("http://localhost:3000/users/4")
+            .then(res=>{
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log("err",err)
+            })
+
+        }
+    </script>
+</body>
+
+</html>
