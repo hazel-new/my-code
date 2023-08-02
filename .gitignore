@@ -1,0 +1,39 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# System tmp file
+*~
+*.log
+*.swp
+*.dat
+
+# Python tmp file
+*.py[cod]
+__pycache__
+*_flymake.py
+
+# IDE tmp file
+.project
+.pydevproject
+.idea
+.vscode
+
+# dependencies
+*/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# testing
+coverage
+
+# production
+/frontend/build
+/frontend/flask/build
+/frontend/node/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+node_modules
