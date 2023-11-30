@@ -25,6 +25,15 @@
     <!-- js书写方式：行内代式,不推荐，写在标签上的 js 代码需要依靠事件（行为）来触发 -->
     <!-- <button onclick="alert('行内式')">Click</button> -->
     <!-- <a href="javascript:alert('行内式')">Click</a> -->
+    
+    <script>
+        console.log("current host:", window.location.host)
+        if(window.location.host == 'localhost:5500'){
+            console.log("it's my host")
+        }else{
+            console.log("new ip")
+        }
+    </script>
 </body>
 
 </html>

@@ -23,29 +23,31 @@
 
     <!-- let和const关键字 -->
     <script>
-     /* // var,变量声明提升问题
+  /*   //  var,变量声明提升问题
         // console.log(a)
         // let a = 100
         // console.log(a) */
         
-    /* //let和const 与var区别1 ：没有变量提升，必须先定义再使用；
+       //let和const 与var区别1 ：没有变量提升，必须先定义再使用；
         // console.log(a)
         // let a = 100
         // console.log(a)
+
         // 与var区别2：变量重名
         // var name = "Aaa"
         // var name = "bbbbb"
         // let name = "Aaa"
         // let name = "bbbbb"
         // console.log(name)
-        // 与var区别3：块级作用域，只在{}内；var只有函数能限制其作用域
-        // if(true){
-        //     // var i = 100
-        //     let i = 100
-        //     console.log(i)
-        // }
 
-        // console.log(i) */
+        // 与var区别3：块级作用域，只在{}内；var只有函数能限制其作用域
+        if(true){
+            var i = 100
+            // let i = 100
+            console.log(i)
+        }
+
+        console.log(i)
 
     /* // let与const的区别
         // 1.let 声明的变量的值可以改变，const 声明的变量的值不可以改变

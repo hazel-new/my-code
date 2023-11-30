@@ -319,13 +319,34 @@
             // console.log(arr1) */
 
         // 数组常用方法-3：回调函数实现，forEach,map,filter,every,some,find,reduce
-        //    forEach：遍历
+        // forEach：遍历，不支持retrun和break
         // var arr = ['aaa','bbb','ccc','ddd']
         // // 回调函数
         // arr.forEach(function(item,index){
         //     console.log(item,index)
         //     }
         // )
+        // 1、forEach不支持break
+        // let arr = [1, 2, 3, 4],    i = 0,    length = arr.length;
+        // for (; i < length; i++) {    
+        //   console.log(arr[i]); //1,2   
+        //   if (arr[i] === 3) {        break;    };};  
+        // arr.forEach((self,index) => {    
+        //     console.log(self);    
+        //     if (self === 2) {       
+        //        break; //报错    
+        //   };
+        // });}
+        // 2、forEach中使用return无效
+        // let arr = [1, 2, 3, 4]
+        // function find(array, num) {    
+        //   array.forEach((self, index) => {        
+        //     if (self === num) {            
+        //       return index;        
+        //     };    
+        //   });
+        // };
+        // let index = find(arr, 2);// undefined
 
         // map:映射
         // var arr = [1,2,3,4,5,6]
@@ -342,6 +363,13 @@
         // })
         // console.log(arr,arr2)
         // document.write(arr2.join(""))
+
+        // forEach 和map的区别，需要生成新数组的时候， 就用map, 其他的就用forEach。forEach 会修改原来的数组，而map方法会得到一个新的数组并返回
+        // let arr = [1, 2, 3, 4]
+        // const arr2 = arr.map(d => d + 1)
+        // console.log(arr2) // [2,3,4,5]
+        // const arr3 = arr.forEach(d => d + 1)
+        // console.log(arr3) // undefined
 
         // filter:过滤
         // var arr = [

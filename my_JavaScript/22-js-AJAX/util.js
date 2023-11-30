@@ -50,7 +50,7 @@ function queryStringify(obj) {
         return 
       }
       // 执行解析
-      // try catch捕获错误
+      //  catch捕获错误
       try {
         let result = JSON.parse(xhr.responseText)
         // let result = JSON.parse("11111&3333")
